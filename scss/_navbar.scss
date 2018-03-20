@@ -5,6 +5,9 @@
   @include heading-font;
   .navbar-brand {
     color: $white;
+    @include mq(320, 480) {
+      font-size: 0.9rem;
+    }
   }
   .navbar-nav {
     margin-top: 1rem;

@@ -4,6 +4,9 @@ header.masthead {
   h1 {
     font-size: 3rem;
     line-height: 3rem;
+    @include mq(320, 480) {
+      font-size: 2rem;
+    }
   }
   h2 {
     font-size: 1.3rem;
