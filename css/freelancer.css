@@ -393,4 +393,6 @@ a:focus, a:hover, a:active {
 
 .image_main {
   border-radius: 50%;
+  width: 280px;
+  height: 280px;
 }
