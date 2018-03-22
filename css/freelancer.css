@@ -396,3 +396,7 @@ a:focus, a:hover, a:active {
   width: 280px;
   height: 280px;
 }
+
+.form .form__label {
+  display: none;
+}
