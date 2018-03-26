@@ -401,6 +401,10 @@ a:focus, a:hover, a:active {
   display: none;
 }
 
+.form__input_submit {
+  margin-top: 16px;
+}
+
 .skills__list {
   margin-top: 10px;
 }
