@@ -400,3 +400,11 @@ a:focus, a:hover, a:active {
 .form .form__label {
   display: none;
 }
+
+.skills__list {
+  margin-top: 10px;
+}
+
+.skills__list_sub {
+  font-size: 1.2rem;
+}
