@@ -32,7 +32,7 @@ $(function () {
                 dataType: 'json',
                 cache: false,
                 success: function (data) {
-                    if (data === 1) {
+                    if (data.result === 1) {
                         // Success message
                         $('#success').html("<div class='alert alert-success'>");
                         $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
