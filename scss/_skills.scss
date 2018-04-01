@@ -5,4 +5,9 @@
       font-size: 1.2rem;
     }
   }
+  &__star {
+    @include mq(320, 768) {
+      display: none;
+    }
+  }
 }

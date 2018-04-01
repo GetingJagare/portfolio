@@ -1,3 +1,6 @@
+<?php
+$isProduction = $_SERVER['SERVER_NAME'] === 'danwanderer.ru';
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -33,13 +36,15 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto nav">
                 <li class="nav-item mx-0 mx-lg-1 nav__item">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger nav__link" href="#portfolio">Работы</a>
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger nav__link"
+                       href="#portfolio">Работы</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1 nav__item">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger nav__link" href="#about">Обо мне</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1 nav__item">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger nav__link" href="#contact">Контакты</a>
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger nav__link"
+                       href="#contact">Контакты</a>
                 </li>
             </ul>
         </div>
@@ -50,9 +55,9 @@
     <div class="container skills">
         <img class="img-fluid mb-5 d-block mx-auto image image_main" src="img/main.jpg" alt="">
         <h1 class="text-uppercase mb-0">Чурилов Никита</h1>
-        <hr class="star-light">
-        <h2 class="font-weight-light mb-0 skills__list">Веб-программист, верстальщик. <br/>
-            HTML5, CSS3, JS + jQuery, Sass, NodeJS, Yii2, Symfony4,<br/> Wordpress, Drupal, Bolt CMS
+        <hr class="star-light skills__star">
+        <h2 class="font-weight-light mb-0 skills__list">Веб-разработчик, верстальщик. <br/>
+            HTML5, CSS3, JS + jQuery, Sass, Gulp, NodeJS, Yii2, Symfony4,<br/> Wordpress, Drupal, Bolt CMS
         </h2>
         <h3 class="font-weight-light mb-0 skills__list skills__list_sub">
             Git, Apache, Nginx, MySQL, XAMPP
@@ -61,12 +66,12 @@
 </header>
 
 <!-- Portfolio Grid Section -->
-<section class="portfolio" id="portfolio">
+<section class="portfolio section" id="portfolio">
     <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Проекты, в которых я участвовал</h2>
-        <hr class="star-dark mb-5">
-        <div class="row">
-            <div class="col-md-6 col-lg-4">
+        <h2 class="text-center text-uppercase text-secondary mb-0 section__title">Проекты, в которых я участвовал</h2>
+        <hr class="star-dark mb-5 section__star">
+        <div class="row portfolio__row">
+            <div class="col-md-6 col-lg-4 portfolio__item">
                 <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
                     <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
                         <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
@@ -76,7 +81,7 @@
                     <img class="img-fluid" src="img/portfolio/online_s.png" alt="">
                 </a>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 portfolio__item">
                 <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
                     <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
                         <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
@@ -86,7 +91,7 @@
                     <img class="img-fluid" src="img/portfolio/visa.png" alt="">
                 </a>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 portfolio__item">
                 <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
                     <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
                         <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
@@ -96,7 +101,7 @@
                     <img class="img-fluid" src="img/portfolio/web.png" alt="">
                 </a>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 portfolio__item">
                 <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-4">
                     <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
                         <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
@@ -106,7 +111,7 @@
                     <img class="img-fluid" src="img/portfolio/wp_inter.png" alt="">
                 </a>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 portfolio__item">
                 <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-5">
                     <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
                         <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
@@ -116,7 +121,7 @@
                     <img class="img-fluid" src="img/portfolio/protres.png" alt="">
                 </a>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 portfolio__item">
                 <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-6">
                     <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
                         <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
@@ -131,17 +136,18 @@
 </section>
 
 <!-- About Section -->
-<section class="bg-primary text-white mb-0" id="about">
+<section class="bg-primary text-white mb-0 section" id="about">
     <div class="container">
-        <h2 class="text-center text-uppercase text-white">Обо мне</h2>
-        <hr class="star-light mb-5">
+        <h2 class="text-center text-uppercase text-white section__title">Обо мне</h2>
+        <hr class="star-light mb-5 section__star">
         <div class="row">
             <div class="col-lg-4 ml-auto">
                 <p class="lead">
                     Языки программирования: PHP, Javascript (jQuery), NodeJS. <br/><br/>
-                    HTML5, CSS3, Sass.<br/><br/>
+
+                    Фронтэнд: HTML5, CSS3, Sass, Gulp.<br/><br/>
                     Разработка сайтов на любой CMS или фрэймворке, используя современные технологии, для Вас и для
-                    получения личного опыта.
+                    получения личного опыта.<br/>
 
                     Адаптация сайтов под различные разрешения.
                 </p>
@@ -149,8 +155,7 @@
             <div class="col-lg-4 mr-auto">
                 <p class="lead">
                     Образование: МГУП им. Ивана Фёдорова.<br/><br/>
-                    Знание языков: английский (средний уровень), <br/><br/>
-                    немецкий (базовый уровень).
+                    Знание языков: английский (средний уровень), немецкий (базовый уровень).
                 </p>
             </div>
         </div>
@@ -158,10 +163,10 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact">
+<section id="contact" class="section">
     <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Свяжитесь со мной</h2>
-        <hr class="star-dark mb-5">
+        <h2 class="text-center text-uppercase text-secondary mb-0 section__title">Свяжитесь со мной</h2>
+        <hr class="star-dark mb-5 section__star">
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
@@ -203,10 +208,12 @@
                         </div>
                     </div>
                     <br>
-                    <div class="g-recaptcha form__captcha" data-sitekey="6LfgF04UAAAAAKNZebIMRTCWjCgId5zhS_vk9yuW"></div>
+                    <div class="g-recaptcha form__captcha"
+                         data-sitekey="6LfgF04UAAAAAKNZebIMRTCWjCgId5zhS_vk9yuW"></div>
                     <div id="success"></div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-xl form__input form__input_submit" id="sendMessageButton">
+                        <button type="submit" class="btn btn-primary btn-xl form__input form__input_submit"
+                                id="sendMessageButton">
                             Отправить
                         </button>
                     </div>
@@ -248,7 +255,7 @@
 
 <div class="copyright py-4 text-center text-white">
     <div class="container">
-        <small>Copyright &copy; 2018 | danwanderer.ru</small>
+        <small>Copyright &copy; <?= date('Y')?> | <?= $_SERVER['SERVER_NAME'] ?></small>
     </div>
 </div>
 
@@ -262,24 +269,32 @@
 <!-- Portfolio Modals -->
 
 <!-- Portfolio Modal 1 -->
-<div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
-    <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-            <i class="fa fa-3x fa-times"></i>
+<div class="portfolio-modal mfp-hide project" id="portfolio-modal-1">
+    <div class="portfolio-modal-dialog bg-white project__modal">
+        <a class="close-button d-none d-md-block portfolio-modal-dismiss project__close-button" href="#">
+            <i class="fa fa-3x fa-times project__close-button-icon"></i>
         </a>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-secondary text-uppercase mb-0">online-samsung.ru</h2>
-                    <hr class="star-dark mb-5">
-                    <img class="img-fluid mb-5" src="img/portfolio/online_s.png" alt="">
-                    <p class="mb-5">
+        <div class="container text-center project__container">
+            <div class="row project__row">
+                <div class="col-lg-8 mx-auto project__row-block">
+                    <h2 class="text-secondary text-uppercase mb-0 project__title">online-samsung.ru</h2>
+                    <hr class="star-dark mb-5 project__star">
+                    <p class="mb-5 project__description">
                         <a href="https://online-samsung.ru" target="_blank">Официальный магазин Samsung</a> в
                         России.<br/>
                         CMS Drupal. <br/>
                         Подключение сервисов доставки, онлайн-оплаты, создание интерактивной карты
                         точек самовывоза по всей России.
                     </p>
+                    <div class="project__images">
+                        <div class="project__images-item project__images-item_desktop">
+                            <div class="project__resolution">
+                                <i class="fa fa-desktop"></i>
+                            </div>
+                            <img class="img-fluid mb-5  project__screenshot project__screenshot_desktop"
+                                 src="img/portfolio/online_s.png" alt="">
+                        </div>
+                    </div>
                     <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                         <i class="fa fa-close"></i>
                         Закрыть</a>
@@ -290,23 +305,31 @@
 </div>
 
 <!-- Portfolio Modal 2 -->
-<div class="portfolio-modal mfp-hide" id="portfolio-modal-2">
-    <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-            <i class="fa fa-3x fa-times"></i>
+<div class="portfolio-modal mfp-hide project" id="portfolio-modal-2">
+    <div class="portfolio-modal-dialog bg-white project__modal">
+        <a class="close-button d-none d-md-block portfolio-modal-dismiss project__close-button" href="#">
+            <i class="fa fa-3x fa-times project__close-button-icon"></i>
         </a>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-secondary text-uppercase mb-0">visamanаger.ru</h2>
-                    <hr class="star-dark mb-5">
-                    <img class="img-fluid mb-5" src="img/portfolio/visa.png" alt="">
-                    <p class="mb-5">
+        <div class="container text-center project__container">
+            <div class="row project__row">
+                <div class="col-lg-8 mx-auto project__row-block">
+                    <h2 class="text-secondary text-uppercase mb-0 project__title">visamanаger.ru</h2>
+                    <hr class="star-dark mb-5 project__star">
+                    <p class="mb-5 project__description">
                         Сайт <a href="http://visamanager.ru" target="_blank">визового менеджера</a>.
                         CMS Drupal <br/>
                         Проектирование, разработка и реализация личного кабинета для заказа виз, загранпаспортов и<br/>
                         приглашений для иностранцев.
                     </p>
+                    <div class="project__images">
+                        <div class="project__images-item project__images-item_desktop">
+                            <div class="project__resolution">
+                                <i class="fa fa-desktop"></i>
+                            </div>
+                            <img class="img-fluid mb-5  project__screenshot project__screenshot_desktop"
+                                 src="img/portfolio/visa.png" alt="">
+                        </div>
+                    </div>
                     <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                         <i class="fa fa-close"></i>
                         Закрыть</a>
@@ -317,20 +340,43 @@
 </div>
 
 <!-- Portfolio Modal 3 -->
-<div class="portfolio-modal mfp-hide" id="portfolio-modal-3">
-    <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-            <i class="fa fa-3x fa-times"></i>
+<div class="portfolio-modal mfp-hide project" id="portfolio-modal-3">
+    <div class="portfolio-modal-dialog bg-white project__modal">
+        <a class="close-button d-none d-md-block portfolio-modal-dismiss project__close-button" href="#">
+            <i class="fa fa-3x fa-times project__close-button-icon"></i>
         </a>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-secondary text-uppercase mb-0">rustex.ru</h2>
-                    <hr class="star-dark mb-5">
-                    <img class="img-fluid mb-5" src="img/portfolio/web.png" alt="">
-                    <p class="mb-5">Сайт <a href="https://rustex.ru" target="_blank">веб-студии</a>. Bolt CMS. <br/>
+        <div class="container text-center project__container">
+            <div class="row project__row">
+                <div class="col-lg-8 mx-auto project__row-block">
+                    <h2 class="text-secondary text-uppercase mb-0 project__title">rustex.ru</h2>
+                    <hr class="star-dark mb-5 project__star">
+                    <p class="mb-5 project__description">
+                        Сайт <a href="https://rustex.ru" target="_blank">веб-студии</a>. Bolt CMS. <br/>
                         Разработка и реализация
                     </p>
+                    <div class="project__images">
+                        <div class="project__images-item project__images-item_mobile">
+                            <div class="project__resolution">
+                                <i class="fa fa-mobile"></i>
+                            </div>
+                            <img class="img-fluid mb-5 project__screenshot project__screenshot_mobile"
+                                 src="img/portfolio/web_320.png" alt="">
+                        </div>
+                        <div class="project__images-item project__images-item_tablet">
+                            <div class="project__resolution">
+                                <i class="fa fa-tablet"></i>
+                            </div>
+                            <img class="img-fluid mb-5 project__screenshot project__screenshot_tablet"
+                                 src="img/portfolio/web_768.png" alt="">
+                        </div>
+                        <div class="project__images-item project__images-item_desktop">
+                            <div class="project__resolution">
+                                <i class="fa fa-desktop"></i>
+                            </div>
+                            <img class="img-fluid mb-5  project__screenshot project__screenshot_desktop"
+                                 src="img/portfolio/web.png" alt="">
+                        </div>
+                    </div>
                     <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                         <i class="fa fa-close"></i>
                         Закрыть</a>
@@ -341,24 +387,46 @@
 </div>
 
 <!-- Portfolio Modal 4 -->
-<div class="portfolio-modal mfp-hide" id="portfolio-modal-4">
-    <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-            <i class="fa fa-3x fa-times"></i>
+<div class="portfolio-modal mfp-hide project" id="portfolio-modal-4">
+    <div class="portfolio-modal-dialog bg-white project__modal">
+        <a class="close-button d-none d-md-block portfolio-modal-dismiss project__close-button" href="#">
+            <i class="fa fa-3x fa-times project__close-button-icon"></i>
         </a>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-secondary text-uppercase mb-0">wp-interiors.com</h2>
-                    <hr class="star-dark mb-5">
-                    <img class="img-fluid mb-5" src="img/portfolio/wp_inter.png" alt="">
-                    <p class="mb-5">
+        <div class="container text-center project__container">
+            <div class="row project__row">
+                <div class="col-lg-8 mx-auto project__row-block">
+                    <h2 class="text-secondary text-uppercase mb-0 project__title">wp-interiors.com</h2>
+                    <hr class="star-dark mb-5 project__star">
+                    <p class="mb-5 project__description">
                         <a href="http://wp-interiors.com" target="_blank">Сайт компании</a>, занимающейся
                         проектированием интерьеров квартир.
                         CMS Wordpress. <br/>
                         Проектирование, разработка и реализация, верстка фронтэнда в соответствии с требованиями
                         заказчика.
                     </p>
+                    <div class="project__images">
+                        <div class="project__images-item project__images-item_mobile">
+                            <div class="project__resolution">
+                                <i class="fa fa-mobile"></i>
+                            </div>
+                            <img class="img-fluid mb-5 project__screenshot project__screenshot_mobile"
+                                 src="img/portfolio/wp_inter_320.png" alt="">
+                        </div>
+                        <div class="project__images-item project__images-item_tablet">
+                            <div class="project__resolution">
+                                <i class="fa fa-tablet"></i>
+                            </div>
+                            <img class="img-fluid mb-5 project__screenshot project__screenshot_tablet"
+                                 src="img/portfolio/wp_inter_768.png" alt="">
+                        </div>
+                        <div class="project__images-item project__images-item_desktop">
+                            <div class="project__resolution">
+                                <i class="fa fa-desktop"></i>
+                            </div>
+                            <img class="img-fluid mb-5  project__screenshot project__screenshot_desktop"
+                                 src="img/portfolio/wp_inter.png" alt="">
+                        </div>
+                    </div>
                     <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                         <i class="fa fa-close"></i>
                         Закрыть</a>
@@ -369,21 +437,43 @@
 </div>
 
 <!-- Portfolio Modal 5 -->
-<div class="portfolio-modal mfp-hide" id="portfolio-modal-5">
-    <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-            <i class="fa fa-3x fa-times"></i>
+<div class="portfolio-modal mfp-hide project" id="portfolio-modal-5">
+    <div class="portfolio-modal-dialog bg-white project__modal">
+        <a class="close-button d-none d-md-block portfolio-modal-dismiss project__close-button" href="#">
+            <i class="fa fa-3x fa-times project__close-button-icon"></i>
         </a>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-secondary text-uppercase mb-0">protres.ru</h2>
-                    <hr class="star-dark mb-5">
-                    <img class="img-fluid mb-5" src="img/portfolio/protres.png" alt="">
-                    <p class="mb-5">
+        <div class="container text-center project__container">
+            <div class="row project__row">
+                <div class="col-lg-8 mx-auto project__row-block">
+                    <h2 class="text-secondary text-uppercase mb-0 project__title">protres.ru</h2>
+                    <hr class="star-dark mb-5 project__star">
+                    <p class="mb-5 project__description">
                         <a href="https://protres.ru" target="_blank">Сайт</a> института белка РАН. CMS Drupal.<br/>
-                        Верстка в соответствии с макетами.
+                        Верстка под все разрешения в соответствии с макетами.
                     </p>
+                    <div class="project__images">
+                        <div class="project__images-item project__images-item_mobile">
+                            <div class="project__resolution">
+                                <i class="fa fa-mobile"></i>
+                            </div>
+                            <img class="img-fluid mb-5 project__screenshot project__screenshot_mobile"
+                                 src="img/portfolio/protres_320.png" alt="">
+                        </div>
+                        <div class="project__images-item project__images-item_tablet">
+                            <div class="project__resolution">
+                                <i class="fa fa-tablet"></i>
+                            </div>
+                            <img class="img-fluid mb-5 project__screenshot project__screenshot_tablet"
+                                 src="img/portfolio/protres_768.png" alt="">
+                        </div>
+                        <div class="project__images-item project__images-item_desktop">
+                            <div class="project__resolution">
+                                <i class="fa fa-desktop"></i>
+                            </div>
+                            <img class="img-fluid mb-5  project__screenshot project__screenshot_desktop"
+                                 src="img/portfolio/protres.png" alt="">
+                        </div>
+                    </div>
                     <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                         <i class="fa fa-close"></i>
                         Закрыть</a>
@@ -393,23 +483,46 @@
     </div>
 </div>
 
-<div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
-    <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-            <i class="fa fa-3x fa-times"></i>
+<div class="portfolio-modal mfp-hide project" id="portfolio-modal-6">
+    <div class="portfolio-modal-dialog bg-white project__modal">
+        <a class="close-button d-none d-md-block portfolio-modal-dismiss project__close-button" href="#">
+            <i class="fa fa-3x fa-times project__close-button-icon"></i>
         </a>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-secondary text-uppercase mb-0">meinekurse.ru</h2>
-                    <hr class="star-dark mb-5">
-                    <img class="img-fluid mb-5" src="img/portfolio/meinekurse.png" alt="">
-                    <p class="mb-5">
-                        <a href="http://meinekurse.ru" target="_blank">Сайт</a> центра преподавания немецкого языка.<br/>
-                        Yii + Yupe (backend). <br />
-                        Добавление в систему дополнительных модулей, гугл-капча, правки дизайна, <br />
+        <div class="container text-center project__container">
+            <div class="row project__row">
+                <div class="col-lg-8 mx-auto project__row-block">
+                    <h2 class="text-secondary text-uppercase mb-0 project__title">meinekurse.ru</h2>
+                    <hr class="star-dark mb-5 project__star">
+                    <p class="mb-5 project__description">
+                        <a href="http://meinekurse.ru" target="_blank">Сайт</a> центра преподавания немецкого
+                        языка.<br/>
+                        Yii + Yupe (backend). <br/>
+                        Добавление в систему дополнительных модулей, гугл-капча, правки дизайна, <br/>
                         установка онлайн-консультанта.
                     </p>
+                    <div class="project__images">
+                        <div class="project__images-item project__images-item_mobile">
+                            <div class="project__resolution">
+                                <i class="fa fa-mobile"></i>
+                            </div>
+                            <img class="img-fluid mb-5 project__screenshot project__screenshot_mobile"
+                                 src="img/portfolio/meinekurse_320.png" alt="">
+                        </div>
+                        <div class="project__images-item project__images-item_tablet">
+                            <div class="project__resolution">
+                                <i class="fa fa-tablet"></i>
+                            </div>
+                            <img class="img-fluid mb-5 project__screenshot project__screenshot_tablet"
+                                 src="img/portfolio/meinekurse_768.png" alt="">
+                        </div>
+                        <div class="project__images-item project__images-item_desktop">
+                            <div class="project__resolution">
+                                <i class="fa fa-desktop"></i>
+                            </div>
+                            <img class="img-fluid mb-5 project__screenshot project__screenshot_desktop"
+                                 src="img/portfolio/meinekurse.png" alt="">
+                        </div>
+                    </div>
                     <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                         <i class="fa fa-close"></i>
                         Закрыть</a>
@@ -421,43 +534,22 @@
 
 <script src="js/main.min.js"></script>
 
-<!-- Yandex.Metrika counter -->
-<script>
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function () {
-            try {
-                w.yaCounter48124475 = new Ya.Metrika({
-                    id: 48124475,
-                    clickmap: true,
-                    trackLinks: true,
-                    accurateTrackBounce: true,
-                    webvisor: true
-                });
-            } catch (e) {
-            }
-        });
+<?php
+if ( $isProduction ) {
+	print "<!-- Yandex.Metrika counter -->" .
+	      "<script>(function (d, w, c) { (w[c] = w[c] || []).push(function () {" .
+	      "try { " .
+	      "w.yaCounter48124475 = new Ya.Metrika({id: 48124475, clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true});" .
+	      "} catch (e) {}" .
+	      "}); var n = d.getElementsByTagName(\"script\")[0], s = d.createElement(\"script\"), f = function () { n.parentNode.insertBefore(s, n); };" .
+	      "s.type = \"text/javascript\"; s.async = true; s.src = \"https://mc.yandex.ru/metrika/watch.js\";" .
+	      "if (w.opera == \"[object Opera]\") { d.addEventListener(\"DOMContentLoaded\", f, false); } else { f(); }" .
+	      "})(document, window, \"yandex_metrika_callbacks\"); </script>";
+	print "<noscript><div><img src=\"https://mc.yandex.ru/watch/48124475\" style=\"position:absolute; left:-9999px;\" alt=\"\"/></div></noscript>";
+	print "<!-- /Yandex.Metrika counter -->";
+	print "<script src='https://www.google.com/recaptcha/api.js'></script>";
+}
+?>
 
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () {
-                n.parentNode.insertBefore(s, n);
-            };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else {
-            f();
-        }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
-<noscript>
-    <div><img src="https://mc.yandex.ru/watch/48124475" style="position:absolute; left:-9999px;" alt=""/></div>
-</noscript>
-<!-- /Yandex.Metrika counter -->
 </body>
-
 </html>

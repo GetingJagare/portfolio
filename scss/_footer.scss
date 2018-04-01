@@ -3,8 +3,7 @@
   padding-bottom: 5rem;
   background-color: $secondary;
   color: $white;
-}
-
-.copyright {
-  background-color: darken($secondary, 10%);
+  @include mq(320, 768) {
+    padding: 2rem 0;
+  }
 }

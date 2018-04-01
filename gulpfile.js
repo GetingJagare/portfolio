@@ -79,7 +79,7 @@ gulp.task('css:minify', ['css:compile'], function () {
         .pipe(cleanCSS())
         .pipe(concat('main.min.css'))
         .pipe(gulp.dest('./css'))
-        .pipe(browserSync.stream());
+        /*.pipe(browserSync.stream())*/;
 });
 
 // CSS
@@ -98,7 +98,7 @@ gulp.task('js:minify', function () {
         .pipe(concat('main.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./js'))
-        .pipe(browserSync.stream());
+        /*.pipe(browserSync.stream())*/;
 });
 
 // JS
@@ -109,16 +109,14 @@ gulp.task('default', ['css', 'js', 'vendor']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function () {
-    browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    });
+    /*browserSync.init({
+        proxy : "portfolio.localhost"
+    });*/
 });
 
 // Dev task
-gulp.task('dev', ['css', 'js', 'browserSync'], function () {
+gulp.task('dev', ['css', 'js'/*, 'browserSync'*/], function () {
     gulp.watch('./scss/*.scss', ['css']);
     gulp.watch('./js/**/*.js', ['js']);
-    gulp.watch('./*.html', browserSync.reload);
+    //gulp.watch('./*.php', browserSync.reload);
 });

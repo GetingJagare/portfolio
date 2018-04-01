@@ -26,6 +26,11 @@
       margin-bottom: 30px;
     }
   }
+  &__item + &__item {
+    @include mq(320, 768) {
+      margin-top: 0.9rem;
+    }
+  }
 }
 
 .portfolio-modal {
