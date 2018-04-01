@@ -15,6 +15,7 @@
 			&_desktop {
 				width: 100%;
 			}
+			padding: 0 1rem;
 			@include mq(480, 1024) {
 				padding: 0 1.5rem;
 			}
@@ -48,9 +49,7 @@
 		}
 	}
 	&__star {
-		@include mq(320, 768) {
-			display: none;
-		}
+		display: none;
 	}
 	&__description {
 		@include mq(320, 768) {
@@ -58,7 +57,9 @@
 		}
 	}
 	&__screenshot {
-
+		&_desktop {
+			width: 100%;
+		}
 	}
 
 	& &__modal {
