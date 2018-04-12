@@ -518,6 +518,11 @@ a:focus, a:hover, a:active {
   }
 }
 
+.project__screenshot {
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
 .project__screenshot_desktop {
   width: 100%;
 }
