@@ -56,7 +56,7 @@ $isProduction = $_SERVER['SERVER_NAME'] === 'danwanderer.ru';
         <img class="img-fluid mb-5 d-block mx-auto image image_main" src="img/main.jpg" alt="">
         <h1 class="text-uppercase mb-0">Чурилов Никита</h1>
         <hr class="star-light skills__star">
-        <h2 class="font-weight-light mb-0 skills__list">Веб-разработчик, верстальщик. <br/>
+        <h2 class="font-weight-light mb-0 skills__list">Веб-разработчик, проектировщик, верстальщик. <br/>
             HTML5, CSS3, JS + jQuery, VueJS, Sass, Gulp, NodeJS, Yii(v1, v2), Symfony (v3, v4),<br/>
             Wordpress, Drupal, Bolt CMS
         </h2>
