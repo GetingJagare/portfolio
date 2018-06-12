@@ -57,7 +57,8 @@ $isProduction = $_SERVER['SERVER_NAME'] === 'danwanderer.ru';
         <h1 class="text-uppercase mb-0">Чурилов Никита</h1>
         <hr class="star-light skills__star">
         <h2 class="font-weight-light mb-0 skills__list">Веб-разработчик, верстальщик. <br/>
-            HTML5, CSS3, JS + jQuery, Sass, Gulp, NodeJS, Yii2, Symfony4,<br/> Wordpress, Drupal, Bolt CMS
+            HTML5, CSS3, JS + jQuery, VueJS, Sass, Gulp, NodeJS, Yii(v1, v2), Symfony (v3, v4),<br/>
+            Wordpress, Drupal, Bolt CMS
         </h2>
         <h3 class="font-weight-light mb-0 skills__list skills__list_sub">
             Git, Apache, Nginx, MySQL, XAMPP
@@ -495,10 +496,10 @@ $isProduction = $_SERVER['SERVER_NAME'] === 'danwanderer.ru';
                     <hr class="star-dark mb-5 project__star">
                     <p class="mb-5 project__description">
                         <a href="http://meinekurse.ru" target="_blank">Сайт</a> центра преподавания немецкого
-                        языка.<br/>
-                        Yii + Yupe (backend). <br/>
-                        Добавление в систему дополнительных модулей, гугл-капча, правки дизайна, <br/>
-                        установка онлайн-консультанта.
+                        языка (в данный момент на поддержке).<br/>
+                        Yupe v1. <br/>
+                        Добавление в систему дополнительных модулей, правки фронт-энда (Less + JS) <br/>
+                        установка сервисов (гугл-капчи, метрики, онлайн-консультанта).
                     </p>
                     <div class="project__images">
                         <div class="project__images-item project__images-item_mobile">
@@ -547,7 +548,7 @@ if ( $isProduction ) {
 	      "})(document, window, \"yandex_metrika_callbacks\"); </script>";
 	print "<noscript><div><img src=\"https://mc.yandex.ru/watch/48124475\" style=\"position:absolute; left:-9999px;\" alt=\"\"/></div></noscript>";
 	print "<!-- /Yandex.Metrika counter -->";
-	print "<script src='https://www.google.com/recaptcha/api.js'></script>";
+	print "<script src='https://www.google.com/recaptcha/api.js' async></script>";
 }
 ?>
 
