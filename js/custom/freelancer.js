@@ -1,7 +1,7 @@
 (function ($) {
     "use strict"; // Start of use strict
 
-    $(document).load(function () {
+    $(function () {
         $('head').eq(0).append($('#included_styles').get(0).textContent);
     });
 
