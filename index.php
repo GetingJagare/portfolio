@@ -14,16 +14,15 @@ $isProduction = $_SERVER['SERVER_NAME'] === 'danwanderer.ru';
     <meta name="keywords" content="Портфолио веб-разработчика, веб-программист PHP JS NodeJS, г. Москва" />
 
     <title>Сайт-портфолио | Никита Чурилов</title>
-</head>
 
-<body id="page-top">
-<noscript id="included_styles">
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
           type="text/css">
     <link rel="stylesheet" href="css/main.min.css" type="text/css">
-</noscript>
+</head>
+
+<body id="page-top">
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
