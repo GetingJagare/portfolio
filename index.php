@@ -11,17 +11,18 @@ $isProduction = $_SERVER['SERVER_NAME'] === 'danwanderer.ru';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="yandex-verification" content="45765db049347b61"/>
 
-    <title>Сайт-портфолио | Никита Чурилов</title>
+    <meta name="keywords" content="Портфолио веб-разработчика, веб-программист PHP JS NodeJS, г. Москва" />
 
-    <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <title>Сайт-портфолио | Никита Чурилов</title>
+</head>
+
+<body id="page-top">
+<noscript id="included_styles">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
           type="text/css">
     <link rel="stylesheet" href="css/main.min.css" type="text/css">
-</head>
-
-<body id="page-top">
+</noscript>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
