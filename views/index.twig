@@ -10,7 +10,7 @@
 
     <meta name="keywords" content="Портфолио веб-разработчика, веб-программист PHP JS NodeJS, г. Москва" />
 
-    <title>Сайт-портфолио | Никита Чурилов</title>
+    <title>Сайт-портфолио | Никита Мещерский</title>
 
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -51,7 +51,7 @@
 <header class="masthead bg-primary text-white text-center">
     <div class="container skills">
         <img class="img-fluid mb-5 d-block mx-auto image image_main" src="img/main.jpg" alt="">
-        <h1 class="text-uppercase mb-0">Чурилов Никита</h1>
+        <h1 class="text-uppercase mb-0">Никита Мещерский</h1>
         <hr class="star-light skills__star">
         <h2 class="font-weight-light mb-0 skills__list">Веб-разработчик, проектировщик, верстальщик. <br/>
             HTML5, CSS3, JS + jQuery, VueJS, Sass, Gulp, NodeJS, Yii(v1, v2), Symfony (v3, v4),<br/>
@@ -235,13 +235,13 @@
                 <ul class="list-inline mb-0">
                     <li class="list-inline-item">
                         <a class="btn btn-outline-light btn-social text-center rounded-circle"
-                           href="https://www.facebook.com/nikita.churilov.758">
+                           href="https://www.facebook.com/nikita.churilov.758" target="_blank">
                             <i class="fa fa-fw fa-facebook"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a class="btn btn-outline-light btn-social text-center rounded-circle"
-                           href="https://vk.com/dan_rautskeggr">
+                           href="https://vk.com/dan_rautskeggr" target="_blank">
                             <i class="fa fa-fw fa-vk"></i>
                         </a>
                     </li>
@@ -534,6 +534,7 @@
 
 {% if isProduction %}
     {% include absPath ~ '/views/counters/ya.twig' %}
+    {% include absPath ~ '/views/counters/ga.twig' %}
     {% include absPath ~ '/views/services/captcha.twig' %}
 {% endif %}
 

@@ -1,4 +1,4 @@
-const ABSPATH = process.cwd();
+global.ABSPATH = process.cwd();
 
 const http = require('http');
 const router = require('./router');
@@ -12,10 +12,10 @@ const server = http.createServer((req, res) => {
         });
         req.on('end', () => {
             req.post = parse(postBody);
-            router(req, res, ABSPATH);
+            router(req, res);
         });
     } else {
-        router(req, res, ABSPATH);
+        router(req, res);
     }
 });
 

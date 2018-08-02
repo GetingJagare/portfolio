@@ -4,18 +4,18 @@ const mime = require('mime-types');
 const twig = Twig.twig;
 
 
-module.exports = (req, res, absPath) => {
+module.exports = (req, res) => {
     switch (req.url) {
         case '/':
             const isProduction = req.headers.host === 'danwanderer.ru';
-            const template = fs.readFileSync(`${absPath}/views/index.twig`, {encoding: 'utf-8'});
+            const template = fs.readFileSync(`${ABSPATH}/views/index.twig`, {encoding: 'utf-8'});
             const html = twig({
                 data: template,
-                allowInlineIncludes: true,
+                allowInlineIncludes: true
             }).render({
                 isProduction: isProduction,
                 hostname: req.headers.host.replace(/:\d+$/, ''),
-                absPath: absPath
+                absPath: ABSPATH
             });
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.write(html);
@@ -24,7 +24,7 @@ module.exports = (req, res, absPath) => {
         case '/mail':
             const isAjax = req.headers['x-requested-with'] && req.headers['x-requested-with'] === 'XMLHttpRequest';
             if (isAjax) {
-                const mail = require(`${absPath}/mail`);
+                const mail = require(`${ABSPATH}/mail`);
                 if (!req.post.name || !req.post.email || !req.post.phone || !req.post.message || !req.post['g-recaptcha-response']) {
                     res.write(JSON.stringify({result: 0}));
                     res.end();
@@ -43,13 +43,13 @@ module.exports = (req, res, absPath) => {
             }
             break;
         default:
-            const url = `${absPath}${req.url}`.replace(/\?.*$/, '');
+            const url = `${ABSPATH}${req.url}`.replace(/\?.*$/, '');
             if (fs.existsSync(url)) {
                 res.writeHead(200, {'Content-Type': mime.lookup(url)});
                 res.write(fs.readFileSync(url), {encoding: 'utf-8'});
                 res.end();
             } else {
-                const template = fs.readFileSync(`${absPath}/views/errors/404.twig`, {encoding: 'utf-8'});
+                const template = fs.readFileSync(`${ABSPATH}/views/errors/404.twig`, {encoding: 'utf-8'});
                 const html = twig({data: template}).render({ version: process.version });
                 res.writeHead(404, {'Content-Type': 'text/html'});
                 res.write(html);
