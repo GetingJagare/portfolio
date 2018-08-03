@@ -25,21 +25,21 @@ module.exports = (req, res) => {
             const isAjax = req.headers['x-requested-with'] && req.headers['x-requested-with'] === 'XMLHttpRequest';
             if (isAjax) {
                 const striptags = require('striptags');
-                const mail = require(`${ABSPATH}/mail`);
+                const shell = require('shelljs');
                 const {name, email, phone, message} = req.post;
-                if (!name || !email || !phone || !message || !req.post['g-recaptcha-response']) {
+                if (!name || !email || !phone || !message || !req.post['g-recaptcha-response'] || !shell.which('sendmail')) {
                     res.write(JSON.stringify({result: 0}));
                     res.end();
                 }
-                mail(
-                    'getingjagare@gmail.com',
-                    'robot@danwanderer.ru',
-                    `Заявка: ${striptags(name)}`,
-                    `You have received a new message from your website contact form.\n\n
+
+                const from = 'robot@danwanderer.ru';
+                const to = 'getingjagare@gmail.com';
+                const subject = `Заявка: ${striptags(name)}`;
+                const fullMessage = `You have received a new message from your website contact form.\n\n
                     Here are the details:\n\nName: ${striptags(name)}\n\n
                     Email: ${striptags(email)}\n\nPhone: ${striptags(phone)}\n\n
-                    Message:\n${striptags(message)}`
-                );
+                    Message:\n${striptags(message)}`;
+                shell.exec(`echo "Subject:${subject} \n\n${fullMessage}" | sendmail -f ${from} -t ${to}`);
                 res.write(JSON.stringify({result: 1}));
                 res.end();
             }

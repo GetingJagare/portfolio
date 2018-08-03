@@ -32,7 +32,7 @@
     "jquery.easing": "^1.4.1",
     "magnific-popup": "^1.1.0",
     "mime-types": "^2.1.19",
-    "sendmail": "^1.4.1",
+    "shelljs": "^0.8.2",
     "striptags": "^3.1.1",
     "twig": "^1.12.0"
   },
