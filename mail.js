@@ -7,14 +7,11 @@ const sendmail = require('sendmail')({
     }*/
 });
 
-module.exports = (from, to, subject, message, res) => {
+module.exports = (from, to, subject, message) => {
     sendmail({
         from: from,
         to: to,
         subject: subject,
         html: message,
-    }, function(err, reply) {
-        res.write(JSON.stringify({result: !err ? 1 : 0}));
-        res.end();
-    });
+    }, function(err, reply) {});
 };

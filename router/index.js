@@ -38,9 +38,10 @@ module.exports = (req, res) => {
                     `You have received a new message from your website contact form.\n\n
                     Here are the details:\n\nName: ${striptags(name)}\n\n
                     Email: ${striptags(email)}\n\nPhone: ${striptags(phone)}\n\n
-                    Message:\n${striptags(message)}`,
-                    res
+                    Message:\n${striptags(message)}`
                 );
+                res.write(JSON.stringify({result: 1}));
+                res.end();
             }
             break;
         default:
