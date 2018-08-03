@@ -24,6 +24,7 @@ module.exports = (req, res) => {
         case '/mail':
             const isAjax = req.headers['x-requested-with'] && req.headers['x-requested-with'] === 'XMLHttpRequest';
             if (isAjax) {
+                const striptags = require('striptags');
                 const mail = require(`${ABSPATH}/mail`);
                 const {name, email, phone, message} = req.post;
                 if (!name || !email || !phone || !message || !req.post['g-recaptcha-response']) {
@@ -33,11 +34,11 @@ module.exports = (req, res) => {
                 mail(
                     'getingjagare@gmail.com',
                     'robot@danwanderer.ru',
-                    `Заявка: ${name}`,
+                    `Заявка: ${striptags(name)}`,
                     `You have received a new message from your website contact form.\n\n
-                    Here are the details:\n\nName: ${name}\n\n
-                    Email: ${email}\n\nPhone: ${phone}\n\n
-                    Message:\n${message}`,
+                    Here are the details:\n\nName: ${striptags(name)}\n\n
+                    Email: ${striptags(email)}\n\nPhone: ${striptags(phone)}\n\n
+                    Message:\n${striptags(message)}`,
                     res
                 );
             }
