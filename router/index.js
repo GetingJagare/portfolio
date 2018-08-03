@@ -35,10 +35,10 @@ module.exports = (req, res) => {
                 const from = 'robot@danwanderer.ru';
                 const to = 'getingjagare@gmail.com';
                 const subject = `Заявка: ${striptags(name)}`;
-                const fullMessage = `You have received a new message from your website contact form.\r\n
-                    Here are the details:\r\nName: ${striptags(name)}\r\n
-                    Email: ${striptags(email)}\r\nPhone: ${striptags(phone)}\r\n
-                    Message:\r\n${striptags(message)}`;
+                const fullMessage = `You have received a new message from your website contact form.\n
+Here are the details:\nName: ${striptags(name)}\n
+Email: ${striptags(email)}\nPhone: ${striptags(phone)}\n
+Message:\n${striptags(message)}`;
                 shell.exec(`echo -e "From: ${from}\r\nSubject: ${subject}\r\nTo: ${to}\r\n\r\n ${fullMessage}" | sendmail -f ${from} ${to}`);
                 res.write(JSON.stringify({result: 1}));
                 res.end();
