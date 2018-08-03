@@ -25,21 +25,21 @@ module.exports = (req, res) => {
             const isAjax = req.headers['x-requested-with'] && req.headers['x-requested-with'] === 'XMLHttpRequest';
             if (isAjax) {
                 const mail = require(`${ABSPATH}/mail`);
-                if (!req.post.name || !req.post.email || !req.post.phone || !req.post.message || !req.post['g-recaptcha-response']) {
+                const {name, email, phone, message} = req.post;
+                if (!name || !email || !phone || !message || !req.post['g-recaptcha-response']) {
                     res.write(JSON.stringify({result: 0}));
                     res.end();
                 }
                 mail(
                     'getingjagare@gmail.com',
                     'robot@danwanderer.ru',
-                    `Заявка: ${req.post.name}`,
+                    `Заявка: ${name}`,
                     `You have received a new message from your website contact form.\n\n
-                    Here are the details:\n\nName: ${req.post.name}\n\n
-                    Email: ${req.post.email}\n\nPhone: ${req.post.phone}\n\n
-                    Message:\n${req.post.message}`
+                    Here are the details:\n\nName: ${name}\n\n
+                    Email: ${email}\n\nPhone: ${phone}\n\n
+                    Message:\n${message}`,
+                    res
                 );
-                res.write(JSON.stringify({result: 1}));
-                res.end();
             }
             break;
         default:
