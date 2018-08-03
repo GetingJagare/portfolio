@@ -39,7 +39,7 @@ module.exports = (req, res) => {
                     Here are the details:\n\nName: ${striptags(name)}\n\n
                     Email: ${striptags(email)}\n\nPhone: ${striptags(phone)}\n\n
                     Message:\n${striptags(message)}`;
-                shell.exec(`echo "Subject:${subject} \n\n${fullMessage}" | sendmail -f ${from} -t ${to}`);
+                shell.exec(`echo "From:${from}\nSubject:${subject}\nTo:${to} \n\n${fullMessage}" | sendmail -f ${from} -t ${to}`);
                 res.write(JSON.stringify({result: 1}));
                 res.end();
             }
