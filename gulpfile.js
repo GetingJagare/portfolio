@@ -104,7 +104,7 @@ gulp.task('js:minify', function () {
 gulp.task('js', ['js:minify']);
 
 // Default task
-gulp.task('default', ['css', 'js', 'vendor', 'compress_images']);
+gulp.task('default', ['css', 'js', 'vendor']);
 
 // Dev task
 gulp.task('dev', ['css', 'js'/*, 'browserSync'*/], function () {
