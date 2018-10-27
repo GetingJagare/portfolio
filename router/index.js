@@ -2,6 +2,8 @@ const Twig = require('twig');
 const fs = require('fs');
 const mime = require('mime-types');
 const twig = Twig.twig;
+const etag = require('etag');
+const md5File = require('md5-file');
 
 
 module.exports = (req, res) => {
@@ -44,7 +46,17 @@ module.exports = (req, res) => {
         default:
             const url = `${ABSPATH}${req.url}`.replace(/\?.*$/, '');
             if (fs.existsSync(url)) {
-                res.writeHead(200, {'Content-Type': mime.lookup(url)});
+                let headers = {'Content-Type': mime.lookup(url)};
+                if (/\.(js|css|woff\d*|ttf|eot|jpe?g|gif|svg|png|ico)$/.test(url)) {
+                    let currentDate = new Date();
+                    const currentTime = currentDate.getTime();
+                    currentDate.setTime(currentTime + 30 * 24 * 60 * 60 * 1000);
+                    headers['Expires'] = currentDate.toGMTString();
+
+                    const fileHash = md5File.sync(url);
+                    headers['ETag'] = etag(fileHash);
+                }
+                res.writeHead(200, headers);
                 res.write(fs.readFileSync(url), {encoding: 'utf-8'});
                 res.end();
             } else {

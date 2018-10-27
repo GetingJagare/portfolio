@@ -7,6 +7,7 @@ var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
 var concat = require('gulp-concat');
 var nodemon = require('nodemon');
+const compressImages = require('compress-images');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -103,10 +104,24 @@ gulp.task('js:minify', function () {
 gulp.task('js', ['js:minify']);
 
 // Default task
-gulp.task('default', ['css', 'js', 'vendor']);
+gulp.task('default', ['css', 'js', 'vendor', 'compress_images']);
 
 // Dev task
 gulp.task('dev', ['css', 'js'/*, 'browserSync'*/], function () {
     gulp.watch('./scss/*.scss', ['css']);
     gulp.watch('./js/**/*.js', ['js']);
+});
+
+gulp.task('compress_images', () => {
+    compressImages(
+        'img/**/*.{jpg,JPG,jpeg,JPEG,png,PNG,svg,SVG,ico,ICO,gif,GIF}',
+        'build/',
+        {compress_force: false, statistic: true, autoupdate: true}, false,
+        {jpg: {engine: 'mozjpeg', command: ['-quality', '60']}},
+        {png: {engine: 'pngquant', command: ['--quality=20-50']}},
+        {svg: {engine: 'svgo', command: '--multipass'}},
+        {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}},
+        (err) => {
+        }
+    );
 });
