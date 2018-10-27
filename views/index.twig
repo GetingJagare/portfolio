@@ -12,10 +12,6 @@
 
     <title>Сайт-портфолио | Никита Мещерский</title>
 
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-          type="text/css">
     <link rel="stylesheet" href="css/main.min.css" type="text/css">
 </head>
 
@@ -530,7 +526,12 @@
     </div>
 </div>
 
-<script src="js/main.min.js"></script>
+
+<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+      type="text/css">
+<script src="js/main.min.js" defer></script>
 
 {% if isProduction %}
     {% include absPath ~ '/views/counters/ya.twig' %}
