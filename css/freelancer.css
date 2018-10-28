@@ -462,7 +462,7 @@ a:focus, a:hover, a:active {
 }
 
 .project__images-item_desktop {
-  width: 100%;
+  width: 40%;
 }
 
 @media screen and (min-width: 480px) and (max-width: 1023px) {
