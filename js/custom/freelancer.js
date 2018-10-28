@@ -70,6 +70,11 @@
         }).on("blur", ".floating-label-form-group", function () {
             $(this).removeClass("floating-label-form-group-with-focus");
         });
+
+        $('.project__images-item').each(function () {
+            var $img = $('<img src="' + $(this).data('src') + '" class="' + $(this).data('classes') + '" alt="" />');
+            $img.appendTo($(this));
+        });
     });
 
 })(jQuery); // End of use strict
