@@ -65,7 +65,7 @@ module.exports = (req, res) => {
                     headers['Expires'] = currentDate.toGMTString();
                     headers['Last-Modified'] = modDate.toGMTString();
 
-                    if (currentTime - modDate.getTime() < expireTime * 1000) {
+                    if (req.headers['if-modified-since'] && currentTime - modDate.getTime() < expireTime * 1000) {
                         writeResponse(304, headers, fs.readFileSync(url), res);
                     } else {
                         const fileHash = md5File.sync(url);
