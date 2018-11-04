@@ -56,7 +56,7 @@ module.exports = (req, res) => {
 
                     let modTime = fs.statSync(url).mtime;
                     let modDate = new Date(modTime);
-                    headers['Cache-Control'] = expireTime;
+                    headers['Cache-Control'] = `max-age=${expireTime}`;
                     headers['Expires'] = currentDate.toGMTString();
                     headers['Last-Modified'] = modDate.toGMTString();
 
