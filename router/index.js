@@ -51,10 +51,12 @@ module.exports = (req, res) => {
                 if (/\.(js|css|woff\d*|ttf|eot|jpe?g|gif|svg|png|ico)$/.test(url)) {
                     let currentDate = new Date();
                     const currentTime = currentDate.getTime();
-                    currentDate.setTime(currentTime + 30 * 24 * 60 * 60 * 1000);
+                    const expireTime = 30 * 24 * 60 * 60;
+                    currentDate.setTime(currentTime + expireTime * 1000);
 
                     let modTime = fs.statSync(url).mtime;
                     let modDate = new Date(modTime);
+                    headers['Cache-Control'] = expireTime;
                     headers['Expires'] = currentDate.toGMTString();
                     headers['Last-Modified'] = modDate.toGMTString();
 
