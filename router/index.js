@@ -19,7 +19,8 @@ module.exports = (req, res) => {
                 hostname: req.headers.host.replace(/:\d+$/, ''),
                 absPath: ABSPATH
             });
-            res.writeHead(200, {'Content-Type': 'text/html'});
+            let maxAge = 30 * 24 * 60 * 60;
+            res.writeHead(200, {'Content-Type': 'text/html', 'Cache-Control': `private, max-age=${maxAge}, must-revalidate`});
             res.write(html);
             res.end();
             break;
@@ -51,7 +52,11 @@ module.exports = (req, res) => {
                     let currentDate = new Date();
                     const currentTime = currentDate.getTime();
                     currentDate.setTime(currentTime + 30 * 24 * 60 * 60 * 1000);
+
+                    let modTime = fs.statSync(url).mtime;
+                    let modDate = new Date(modTime);
                     headers['Expires'] = currentDate.toGMTString();
+                    headers['Last-Modified'] = modDate.toGMTString();
 
                     const fileHash = md5File.sync(url);
                     headers['ETag'] = etag(fileHash);
