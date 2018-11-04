@@ -5,6 +5,11 @@ const twig = Twig.twig;
 const etag = require('etag');
 const md5File = require('md5-file');
 
+function writeResponse(code, headers, content, res) {
+    res.writeHead(code, headers);
+    res.write(content);
+    res.end();
+};
 
 module.exports = (req, res) => {
     switch (req.url) {
@@ -60,12 +65,17 @@ module.exports = (req, res) => {
                     headers['Expires'] = currentDate.toGMTString();
                     headers['Last-Modified'] = modDate.toGMTString();
 
-                    const fileHash = md5File.sync(url);
-                    headers['ETag'] = etag(fileHash);
+                    if (currentTime - modDate.getTime() < expireTime * 1000) {
+                        writeResponse(304, headers, '', res);
+                    } else {
+                        const fileHash = md5File.sync(url);
+                        headers['ETag'] = etag(fileHash);
+
+                        writeResponse(200, headers, fs.readFileSync(url), res);
+                    }
+                } else {
+                    writeResponse(200, headers, fs.readFileSync(url), res);
                 }
-                res.writeHead(200, headers);
-                res.write(fs.readFileSync(url), {encoding: 'utf-8'});
-                res.end();
             } else {
                 const template = fs.readFileSync(`${ABSPATH}/views/errors/404.twig`, {encoding: 'utf-8'});
                 const html = twig({data: template}).render({ version: process.version });
