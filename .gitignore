@@ -1,5 +1,5 @@
 node_modules
 /.idea/**
-gulpfile.js
 *.log
 log/compress-images/*.txt
+.file_expires

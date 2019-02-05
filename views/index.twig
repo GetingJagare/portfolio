@@ -2,6 +2,9 @@
 <html lang="ru">
 
 <head>
+    {% if isProduction %}
+        {% include absPath ~ '/views/counters/ga.twig' %}
+    {% endif %}
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -588,7 +591,6 @@
 
 {% if isProduction %}
     {% include absPath ~ '/views/counters/ya.twig' %}
-    {% include absPath ~ '/views/counters/ga.twig' %}
     {% include absPath ~ '/views/services/captcha.twig' %}
 {% endif %}
 
