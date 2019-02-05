@@ -74,6 +74,7 @@ gulp.task('css:minify', ['css:compile'], function () {
     return gulp.src([
         './vendor/bootstrap/css/bootstrap.css',
         './vendor/magnific-popup/magnific-popup.css',
+        './vendor/fancybox/fancybox.css',
         './css/*.css',
         '!./css/*.min.css'
     ])
@@ -92,6 +93,7 @@ gulp.task('js:minify', function () {
         './vendor/bootstrap/js/bootstrap.bundle.js',
         './vendor/jquery-easing/jquery.easing.js',
         './vendor/magnific-popup/jquery.magnific-popup.js',
+        './vendor/fancybox/fancybox.js',
         './js/vendor/*.js',
         './js/custom/*.js'
     ])

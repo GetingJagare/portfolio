@@ -12,7 +12,7 @@
 
     <title>Сайт-портфолио | Никита Мещерский</title>
 
-    <link rel="stylesheet" href="css/main.min.css" type="text/css">
+    <link rel="stylesheet" href="css/main.min.css?v=4.0.1" type="text/css">
 </head>
 
 <body id="page-top">
@@ -132,7 +132,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="build/portfolio/kloster_mini.png" alt="">
+                    <img class="img-fluid" src="build/portfolio/kloster_2_mini.png" alt="">
                 </a>
             </div>
         </div>
@@ -169,7 +169,7 @@
 <!-- Contact Section -->
 <section id="contact" class="section">
     <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0 section__title">Свяжитесь со мной</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0 section__title">Буду очень рад, если напишите</h2>
         <hr class="star-dark mb-5 section__star">
         <div class="row">
             <div class="col-lg-8 mx-auto">
@@ -548,27 +548,27 @@
                     <hr class="star-dark mb-5 project__star">
                     <p class="mb-5 project__description">
                         Одностраничный <a href="https://black-freak-society.ru" target="_blank">сайт</a> мастерской.<br/>
-                        VueJs, Bootstrap, PureJS.<br/>
+                        VueJs, Bootstrap, SASS, HTML5.<br/>
                         Сборка приложения WebPack'ом.<br />
                         Дизайн "из головы".
                     </p>
                     <div class="project__images">
                         <div class="project__images-item project__images-item_mobile"
-                             data-src="build/portfolio/kloster_320.png"
+                             data-src="build/portfolio/kloster_320_2.png"
                              data-classes="img-fluid mb-5 project__screenshot project__screenshot_mobile">
                             <div class="project__resolution">
                                 <i class="fa fa-mobile"></i>
                             </div>
                         </div>
                         <div class="project__images-item project__images-item_tablet"
-                             data-src="build/portfolio/kloster_768.png"
+                             data-src="build/portfolio/kloster_768_2.png"
                              data-classes="img-fluid mb-5 project__screenshot project__screenshot_tablet">
                             <div class="project__resolution">
                                 <i class="fa fa-tablet"></i>
                             </div>
                         </div>
                         <div class="project__images-item project__images-item_desktop"
-                             data-src="build/portfolio/kloster.png"
+                             data-src="build/portfolio/kloster_2.png"
                              data-classes="img-fluid mb-5 project__screenshot project__screenshot_desktop">
                             <div class="project__resolution">
                                 <i class="fa fa-desktop"></i>
@@ -584,12 +584,7 @@
     </div>
 </div>
 
-
-<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-      type="text/css">
-<script src="js/main.min.js" defer></script>
+<script src="js/main.min.js?v=4.0.1" async defer></script>
 
 {% if isProduction %}
     {% include absPath ~ '/views/counters/ya.twig' %}

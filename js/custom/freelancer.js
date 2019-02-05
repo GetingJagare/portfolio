@@ -1,3 +1,36 @@
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function () {
+        try {
+            w.yaCounter48124475 = new Ya.Metrika({
+                id: 48124475,
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true
+            });
+        } catch (e) {
+        }
+    });
+    var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
+        n.parentNode.insertBefore(s, n);
+    };
+    s.type = "text/javascript";
+    s.async = true;
+    s.defer = true;
+    s.src = "https://mc.yandex.ru/metrika/watch.js";
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else {
+        f();
+    }
+})(document, window, "yandex_metrika_callbacks");
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-116691286-1');
+
 (function ($) {
     "use strict"; // Start of use strict
 
@@ -71,43 +104,15 @@
             $(this).removeClass("floating-label-form-group-with-focus");
         });
 
-        $('.project__images-item').each(function () {
-            var $img = $('<img src="' + $(this).data('src') + '" class="' + $(this).data('classes') + '" alt="" />');
-            $img.appendTo($(this));
+        $('.project__images').each(function (galleryIndex) {
+            $(this).find('.project__images-item').each(function () {
+                var imageSrc = $(this).data('src');
+                var $fancyboxLink = $('<a data-fancybox="gallery' + galleryIndex + '" href="' + imageSrc + '"></a>');
+
+                $('<img src="' + imageSrc + '" class="' + $(this).data('classes') + '" alt="" />').appendTo($fancyboxLink);
+                $fancyboxLink.appendTo($(this));
+            });
         });
     });
 
 })(jQuery); // End of use strict
-
-(function (d, w, c) {
-    (w[c] = w[c] || []).push(function () {
-        try {
-            w.yaCounter48124475 = new Ya.Metrika({
-                id: 48124475,
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true
-            });
-        } catch (e) {
-        }
-    });
-    var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
-        n.parentNode.insertBefore(s, n);
-    };
-    s.type = "text/javascript";
-    s.async = true;
-    s.defer = true;
-    s.src = "https://mc.yandex.ru/metrika/watch.js";
-    if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-    } else {
-        f();
-    }
-})(document, window, "yandex_metrika_callbacks");
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'UA-116691286-1');

@@ -1,7 +1,7 @@
 {
   "title": "Freelancer",
   "name": "startbootstrap-freelancer",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "A freelancer portfolio HTML theme for Bootstrap.",
   "keywords": [
     "css",
@@ -40,6 +40,7 @@
     "twig": "^1.12.0"
   },
   "devDependencies": {
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "3.9.2",
     "gulp-concat": "^2.6.1",
