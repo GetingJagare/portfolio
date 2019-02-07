@@ -442,14 +442,105 @@ a:focus, a:hover, a:active {
   margin-top: 10px;
 }
 
-.skills__list_sub {
-  font-size: 1.2rem;
-}
-
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .skills__star {
     display: none;
   }
+}
+
+.skills__caption {
+  width: 100%;
+  font-weight: 700;
+  font-size: 2em;
+  font-family: Montserrat;
+}
+
+.skills__item-text {
+  margin-left: 20px;
+  border-bottom: 2px solid white;
+  letter-spacing: 0.05em;
+}
+
+.skills__item-icon {
+  background: url(../img/icons/sprite.png);
+  width: 48px;
+  height: 48px;
+}
+
+.skills__item-icon_html {
+  background-position: -0 -144px;
+}
+
+.skills__item-icon_js {
+  background-position: -144px -96px;
+}
+
+.skills__item-icon_bs {
+  background-position: -192px -48px;
+}
+
+.skills__item-icon_css {
+  background-position: -192px -0;
+}
+
+.skills__item-icon_njs {
+  background-position: -48px -96px;
+}
+
+.skills__item-icon_php {
+  background-position: -0 -96px;
+}
+
+.skills__item-icon_apache {
+  background-position: -192px -96px;
+}
+
+.skills__item-icon_drupal {
+  background-position: -144px -144px;
+}
+
+.skills__item-icon_git {
+  background-position: -96px -144px;
+}
+
+.skills__item-icon_gulp {
+  background-position: -48px -144px;
+}
+
+.skills__item-icon_laravel {
+  background-position: -144px -48px;
+}
+
+.skills__item-icon_mysql {
+  background-position: -144px -0;
+}
+
+.skills__item-icon_nginx {
+  background-position: -96px -96px;
+}
+
+.skills__item-icon_sass {
+  background-position: -96px -48px;
+}
+
+.skills__item-icon_symfony {
+  background-position: -96px -0;
+}
+
+.skills__item-icon_vuejs {
+  background-position: -48px -48px;
+}
+
+.skills__item-icon_webp {
+  background-position: -0 -48px;
+}
+
+.skills__item-icon_wp {
+  background-position: -48px -0;
+}
+
+.skills__item-icon_yii {
+  background-position: -0 -0;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
