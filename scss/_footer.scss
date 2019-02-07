@@ -6,4 +6,8 @@
   @include mq(320, 768) {
     padding: 2rem 0;
   }
+
+  .btn-social {
+     line-height: 2.4rem;
+  }
 }

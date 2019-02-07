@@ -362,6 +362,10 @@ form .row:first-child .floating-label-form-group {
   }
 }
 
+.footer .btn-social {
+  line-height: 2.4rem;
+}
+
 a {
   color: #18BC9C;
 }
