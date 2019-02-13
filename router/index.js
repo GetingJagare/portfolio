@@ -53,15 +53,29 @@ module.exports = (req, res) => {
             const url = `${ABSPATH}${req.url}`.replace(/\?.*$/, '');
             if (fs.existsSync(url)) {
                 let headers = {'Content-Type': mime.lookup(url)};
+                if (/\.(js|css|woff\d*|ttf|eot|jpe?g|gif|svg|png|ico)$/.test(url)) {
+                    let currentDate = new Date();
+                    const currentTime = currentDate.getTime();
+                    const expireTime = 30 * 24 * 60 * 60;
+                    currentDate.setTime(currentTime + expireTime * 1000);
 
-                headers['Cache-Control'] = `max-age=${expireTime}`;
-                headers['Expires'] = currentDate.toGMTString();
-                headers['Last-Modified'] = modDate.toGMTString();
+                    let modTime = fs.statSync(url).mtime;
+                    let modDate = new Date(modTime);
+                    headers['Cache-Control'] = `max-age=${expireTime}`;
+                    headers['Expires'] = currentDate.toGMTString();
+                    headers['Last-Modified'] = modDate.toGMTString();
 
-                const fileHash = md5File.sync(url);
-                headers['ETag'] = etag(fileHash);
+                    if (req.headers['if-modified-since'] && currentTime - modDate.getTime() < expireTime * 1000) {
+                        writeResponse(304, headers, '', res);
+                    } else {
+                        const fileHash = md5File.sync(url);
+                        headers['ETag'] = etag(fileHash);
 
-                writeResponse(200, headers, fs.readFileSync(url), res);
+                        writeResponse(200, headers, fs.readFileSync(url), res);
+                    }
+                } else {
+                    writeResponse(200, headers, fs.readFileSync(url), res);
+                }
             } else {
                 const template = fs.readFileSync(`${ABSPATH}/views/errors/404.twig`, {encoding: 'utf-8'});
                 const html = twig({data: template}).render({ version: process.version });
