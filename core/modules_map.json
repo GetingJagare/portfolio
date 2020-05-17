@@ -1,0 +1,9 @@
+{
+  "config": "modules/config",
+  "file-loader": "modules/file-loader",
+  "responser": "modules/responser",
+  "router": "modules/router",
+  "templator": "modules/templator",
+  "translator": "modules/translator",
+  "server": "modules/server"
+}

@@ -1,22 +1,11 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var header = require('gulp-header');
-var cleanCSS = require('gulp-clean-css');
-var rename = require("gulp-rename");
-var uglify = require('gulp-uglify');
-var pkg = require('./package.json');
-var concat = require('gulp-concat');
-var nodemon = require('nodemon');
-const compressImages = require('compress-images');
+'use strict';
 
-// Set the banner content
-var banner = ['/*!\n',
-    ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-    ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-    ' * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n',
-    ' */\n',
-    ''
-].join('');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const cleanCSS = require('gulp-clean-css');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const compressImages = require('compress-images');
 
 // Copy third party libraries from /node_modules into /vendor
 gulp.task('vendor', function () {
@@ -27,7 +16,7 @@ gulp.task('vendor', function () {
         '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
         '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
     ])
-        .pipe(gulp.dest('./vendor/bootstrap'))
+        .pipe(gulp.dest('./vendor/bootstrap'));
 
     // Font Awesome
     gulp.src([
@@ -37,26 +26,26 @@ gulp.task('vendor', function () {
         '!./node_modules/font-awesome/.*',
         '!./node_modules/font-awesome/*.{txt,json,md}'
     ])
-        .pipe(gulp.dest('./vendor/font-awesome'))
+        .pipe(gulp.dest('./vendor/font-awesome'));
 
     // jQuery
     gulp.src([
         './node_modules/jquery/dist/*',
         '!./node_modules/jquery/dist/core.js'
     ])
-        .pipe(gulp.dest('./vendor/jquery'))
+        .pipe(gulp.dest('./vendor/jquery'));
 
     // jQuery Easing
     gulp.src([
         './node_modules/jquery.easing/*.js'
     ])
-        .pipe(gulp.dest('./vendor/jquery-easing'))
+        .pipe(gulp.dest('./vendor/jquery-easing'));
 
     // Magnific Popup
     gulp.src([
         './node_modules/magnific-popup/dist/*'
     ])
-        .pipe(gulp.dest('./vendor/magnific-popup'))
+        .pipe(gulp.dest('./vendor/magnific-popup'));
 
 });
 

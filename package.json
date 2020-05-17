@@ -1,6 +1,6 @@
 {
   "title": "Freelancer",
-  "name": "startbootstrap-freelancer",
+  "name": "freelancer-portfolio",
   "version": "4.0.1",
   "description": "A freelancer portfolio HTML theme for Bootstrap.",
   "keywords": [
@@ -25,30 +25,35 @@
     "type": "git",
     "url": "https://github.com/BlackrockDigital/startbootstrap-freelancer.git"
   },
+  "scripts": {
+    "test": "mocha ./test/**/*.js",
+    "dev": "nodemon index.js"
+  },
   "dependencies": {
-    "bootstrap": "4.0.0",
-    "compress-images": "^1.4.3",
+    "accept-language-parser": "^1.5.0",
+    "compress-images": "^1.7.8",
+    "cookie": "^0.4.1",
     "etag": "^1.8.1",
-    "font-awesome": "4.7.0",
-    "jquery": "3.3.1",
-    "jquery.easing": "^1.4.1",
-    "magnific-popup": "^1.1.0",
     "md5-file": "^4.0.0",
-    "mime-types": "^2.1.19",
-    "shelljs": "^0.8.2",
+    "mime-types": "^2.1.27",
+    "nodemon": "^2.0.4",
+    "redis": "^2.8.0",
+    "shelljs": "^0.8.4",
     "striptags": "^3.1.1",
-    "twig": "^1.12.0"
+    "twig": "^1.15.1"
   },
   "devDependencies": {
-    "font-awesome": "^4.7.0",
+    "bootstrap": "^4.5.0",
+    "font-awesome": "4.7.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "3.9.2",
     "gulp-concat": "^2.6.1",
     "gulp-filter": "5.1.0",
-    "gulp-header": "2.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^3.2.1",
     "gulp-uglify": "3.0.0",
-    "nodemon": "^1.18.3"
+    "jquery": "3.3.1",
+    "jquery.easing": "^1.4.1",
+    "magnific-popup": "^1.1.0",
+    "mocha": "^6.2.3"
   }
 }

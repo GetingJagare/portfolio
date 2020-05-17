@@ -2,4 +2,6 @@ node_modules
 /.idea/**
 *.log
 log/compress-images/*.txt
-.file_expires
+.file_expires*
+.server_config.json
+app/.app_config.json
