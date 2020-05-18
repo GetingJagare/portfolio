@@ -1,17 +1,4 @@
-//const Twig = require('twig');
-//const fs = require('fs');
-//const twig = Twig.twig;
-
-//'use strict';
-
-/*let {parse} = require('querystring');
-
-function writeResponse(code, headers, content, res) {
-    res.writeHead(code, headers);
-    res.write(content);
-    res.end();
-};*/
-
+const url = require('url');
 const facades = require('../../facades');
 const fs = require('fs');
 
@@ -35,18 +22,71 @@ module.exports = class Router {
         const routePatterns = Object.keys(this.routes);
 
         const request = facades.request();
+        const view = facades.view();
 
-        console.log(request);
+        const requestUrl = url.parse(request.url, true);
 
+        // routes
         routePatterns.forEach((pattern) => {
 
-            if (pattern === request.url) {
+            if (pattern === requestUrl.pathname) {
 
+                const [method, controllerAction] = this.routes[pattern].split(':');
 
+                if (method.toLowerCase() !== facades.requestMethod()) {
+
+                    view.abort(405, 'Method not allowed!');
+
+                    return;
+
+                }
+
+                let [controller, action] = controllerAction.split('@');
+
+                action = action || 'index';
+
+                const controllerClass = require(`${facades.absPath()}/app/${facades.controllersPath()}/${controller}`);
+
+                const controllerInstance = new controllerClass();
+
+                if (!controllerInstance[action]) {
+
+                    view.abort(404, `Class "${controller}" hasn't method "${action}"`);
+
+                    return;
+
+                }
+
+                let params = {};
+
+                switch (facades.requestMethod()) {
+                    case 'get':
+                        params = requestUrl.query;
+                        break;
+                    case 'post':
+                        params = request.post;
+                        break;
+                }
+
+                controllerInstance[action].call(controllerClass, request, view, params);
+
+                return;
 
             }
 
         });
+
+        // files
+
+        if (!routePatterns.includes(requestUrl.pathname)) {
+            const {headers, loadedFile} = facades.fileLoader().load(`${facades.absPath()}${requestUrl.pathname}`);
+
+            if (loadedFile) {
+                view.end(loadedFile, headers);
+            } else {
+                view.end(`Resource not found by url ${request.path}`, {'Content-Type': 'text/plain'}, 404);
+            }
+        }
 
     }
 
@@ -110,21 +150,7 @@ module.exports = (req, res) => {
         case '/mail':
             const isAjax = req.headers['x-requested-with'] && req.headers['x-requested-with'] === 'XMLHttpRequest';
             if (isAjax) {
-                const striptags = require('striptags');
-                const shell = require('shelljs');
-                const {name, email, phone, message} = req.post;
-                if (!name || !email || !phone || !message || !req.post['g-recaptcha-response'] || !shell.which('sendmail')) {
-                    res.write(JSON.stringify({result: 0}));
-                    res.end();
-                }
 
-                const from = 'robot@danwanderer.ru';
-                const to = 'getingjagare@gmail.com';
-                const subject = `Заявка: ${striptags(name)}`;
-                const fullMessage = `You have received a new message from your website contact form.\nHere are the details:\nName: ${striptags(name)}\nEmail: ${striptags(email)}\nPhone: ${striptags(phone)}\nMessage:\n${striptags(message)}`;
-                shell.exec(`echo -e "From: ${from}\r\nSubject: ${subject}\r\nTo: ${to}\r\n\r\n ${fullMessage}" | sendmail -f ${from} ${to}`);
-                res.write(JSON.stringify({result: 1}));
-                res.end();
             }
             break;
         default:

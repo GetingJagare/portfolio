@@ -1,13 +1,11 @@
-module.exports = class {
+module.exports = class SiteController {
     constructor() {
 
     }
 
-    index({lang = null}) {
+    index(request, view, params) {
 
-        global.app.lang = lang ? lang : 'ru';
-
-
+        view.view('index');
 
     }
 };

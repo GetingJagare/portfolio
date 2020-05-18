@@ -1,4 +1,4 @@
 {
   "/": "get:SiteController@index",
-  "/mail": "post:MailController@send"
+  "/mail": "post:MailController@index"
 }

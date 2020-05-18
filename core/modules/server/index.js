@@ -1,3 +1,8 @@
+const {parse} = require('querystring');
+
+/**
+ * @type {module.Server}
+ */
 module.exports = class Server {
 
     constructor() {
@@ -12,7 +17,23 @@ module.exports = class Server {
             global.app.response = res;
 
             global.app.setLanguage();
-            global.app.router.parse();
+
+            if (req.method.toLowerCase() === 'post') {
+
+                let postBody = '';
+
+                req.on('data', chunk => { postBody += chunk });
+
+                req.on('end', () => {
+                    req.post = parse(postBody);
+                    global.app.router.parse();
+                });
+
+            } else {
+
+                global.app.router.parse();
+
+            }
         });
 
         this.instance.listen(this.config.port, '127.0.0.1');
