@@ -21,11 +21,21 @@ module.exports = class Responser {
      */
     view(template) {
 
+        this.end(this.renderTemplate(template));
+
+    }
+
+    /**
+     * @param template
+     * @returns {Promise|*}
+     */
+    renderTemplate(template) {
+
         template = `${template.replace(/^\/?/, '')}.twig`;
 
         const renderedTemplate = facades.templator().render(template);
 
-        this.end(renderedTemplate);
+        return renderedTemplate;
 
     }
 
