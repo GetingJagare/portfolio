@@ -35,6 +35,7 @@ module.exports = class Templator {
             isProduction: !facades.app().config.dev,
             hostname: facades.app().config.host.replace(/:\d+$/, ''),
             absPath: facades.absPath(),
+            viewsPath: `${facades.absPath()}/app/${facades.app().config.views_path}`,
             __t: facades.__t
         });
 

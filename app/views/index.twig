@@ -3,7 +3,7 @@
 
 <head>
     {% if isProduction %}
-        {% include absPath ~ '/views/counters/ga.twig' %}
+        {% include viewsPath ~ '/counters/ga.twig' %}
     {% endif %}
 
     <meta charset="utf-8">
@@ -673,8 +673,8 @@
 <script src="js/main.min.js?v=4.0.3" async defer></script>
 
 {% if isProduction %}
-    {% include absPath ~ '/views/counters/ya.twig' %}
-    {% include absPath ~ '/views/services/captcha.twig' %}
+    {% include viewsPath ~ '/counters/ya.twig' %}
+    {% include viewsPath ~ '/services/captcha.twig' %}
 {% endif %}
 
 </body>
