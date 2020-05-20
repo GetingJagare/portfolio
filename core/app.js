@@ -47,6 +47,8 @@ module.exports = class App {
 
         }
 
+        //@todo lang in cookie has a higher prior
+
         const langParser = require('accept-language-parser');
 
         const lang = langParser.parse(request.headers['accept-language'])[0]['code'] || (cookies?.lang ? cookies.lang : this.config.sourceLang);
