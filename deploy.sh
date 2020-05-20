@@ -4,4 +4,4 @@ git fetch
 git merge origin/master
 
 npm install --only-prod
-npm run launch
+#npm run launch
