@@ -9,6 +9,12 @@ const redisClient = redis.createClient();
 module.exports = class Translator {
     constructor () {}
 
+    hasTranslations (lang) {
+
+        return fs.existsSync(`${app.appPath}/translations/${lang}`);
+
+    }
+
     __t (str) {
 
         const app = facades.app();
@@ -19,7 +25,7 @@ module.exports = class Translator {
 
         }
 
-        if (!fs.existsSync(`${app.appPath}/translations/${app.config.lang}`)) {
+        if (!this.hasTranslations(app.config.lang)) {
 
             return str;
 

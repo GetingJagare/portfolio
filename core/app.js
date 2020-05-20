@@ -49,11 +49,11 @@ module.exports = class App {
 
         const langParser = require('accept-language-parser');
 
-        const lang = langParser.parse(request.headers['accept-language'])[0]['code'] || (cookies?.lang ? cookies.lang : facades.app().config.sourceLang);
+        const lang = langParser.parse(request.headers['accept-language'])[0]['code'] || (cookies?.lang ? cookies.lang : this.config.sourceLang);
 
         if (this.config.lang !== lang) {
 
-            this.config.lang = lang;
+            this.config.lang = this.translator.hasTranslations(lang) && lang !== this.config.sourceLang ? lang : this.config.alternativeLang;
 
             response.setHeader('Set-Cookie', `lang=${lang}`);
 
