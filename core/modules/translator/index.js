@@ -15,6 +15,7 @@ module.exports = class Translator {
 
     }
 
+    //@todo put translations to redis
     __t (str) {
 
         const app = facades.app();
