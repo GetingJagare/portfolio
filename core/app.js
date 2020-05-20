@@ -9,6 +9,8 @@ module.exports = class App {
     constructor(absPath) {
 
         this.absPath = absPath;
+        this.appPath = `${this.absPath}/app`;
+
         this.config = {};
 
         if (!global.app) {
@@ -17,9 +19,9 @@ module.exports = class App {
 
         }
 
-        if (fs.existsSync(`${this.absPath}/app/.app_config.json`)) {
+        if (fs.existsSync(`${this.appPath}/.app_config.json`)) {
 
-            this.config = require(`${this.absPath}/app/.app_config.json`);
+            this.config = require(`${this.appPath}/.app_config.json`);
 
         }
 
@@ -30,6 +32,7 @@ module.exports = class App {
     setLanguage() {
 
         const request = facades.request();
+        const response = facades.response();
         const cookieParser = require('cookie');
 
         let cookies;
@@ -46,11 +49,13 @@ module.exports = class App {
 
         const langParser = require('accept-language-parser');
 
-        const lang = cookies?.lang ? cookies.lang : langParser.parse(request.headers['accept-language'])[0]['code'];
+        const lang = langParser.parse(request.headers['accept-language'])[0]['code'] || (cookies?.lang ? cookies.lang : facades.app().config.sourceLang);
 
         if (this.config.lang !== lang) {
 
             this.config.lang = lang;
+
+            response.setHeader('Set-Cookie', `lang=${lang}`);
 
         }
 

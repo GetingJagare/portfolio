@@ -1,0 +1,25 @@
+{% set middleKey = (skills|length / 2)|round(0, 'ceil') %}
+
+<div class="skills row flex-wrap">
+    <div class="skills__caption mb-2 mb-md-3 mb-lg-5 mt-2 mt-md-3 mt-lg-5 text-center">{{ t('С чем я работаю') }}:</div>
+    <div class="skills__col pl-5 col-md-5 col-lg-3 ml-auto">
+        {% for i in 0..middleKey - 1 %}
+
+            <div class="d-flex align-items-center mt-3 mb-3 skills__item">
+                <span class="d-inline-block skills__item-icon skills__item-icon_{{ skills[i].slug }}"></span>
+                <span class="d-inline-block skills__item-text">{{ skills[i].title }}</span>
+            </div>
+
+        {% endfor %}
+    </div>
+    <div class="skills__col pl-5 col-lg-3 col-md-5 mr-auto">
+        {% for i in middleKey..skills|length - 1 %}
+
+            <div class="d-flex align-items-center mt-3 mb-3 skills__item">
+                <span class="d-inline-block skills__item-icon skills__item-icon_{{ skills[i].slug }}"></span>
+                <span class="d-inline-block skills__item-text">{{ skills[i].title }}</span>
+            </div>
+
+        {% endfor %}
+    </div>
+</div>

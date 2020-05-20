@@ -1,0 +1,60 @@
+<!-- Contact Section -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0 section__title">
+            {{ t('Буду очень рад, если напишите') }}
+        </h2>
+        <hr class="star-dark mb-5 section__star">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <form name="sentMessage" id="contactForm" novalidate="novalidate" class="form">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <label class="form__label">Name</label>
+                            <input class="form-control" id="name" type="text" placeholder="{{ t('Ваше имя') }}"
+                                   required="required" data-validation-required-message="{{ t('Пожалуйста, введите свое имя') }}"
+                                   name="name">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <label class="form__label">Email Address</label>
+                            <input class="form-control" id="email" type="email" placeholder="{{ t('Эл. почта') }}"
+                                   required="required" data-validation-required-message="{{ t('Пожалуйста, введите Ваш e-mail') }}"
+                                   name="email">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <label class="form__label">Phone Number</label>
+                            <input class="form-control" id="phone" type="tel" placeholder="{{ t('Phone') }}"
+                                   required="required"
+                                   data-validation-required-message="{{ t('Не введен номер телефона') }}" name="phone">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <label class="form__label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="{{ t('Сообщение') }}"
+                                      required="required" data-validation-required-message="{{ t('Введите сообщение') }}"
+                                      name="message"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="g-recaptcha form__captcha" data-sitekey="6LfgF04UAAAAAKNZebIMRTCWjCgId5zhS_vk9yuW"></div>
+                    <div id="success"></div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-xl form__input form__input_submit"
+                                id="sendMessageButton">
+                            {{ t('Отправить') }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

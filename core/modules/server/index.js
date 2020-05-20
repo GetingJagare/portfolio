@@ -16,8 +16,6 @@ module.exports = class Server {
             global.app.request = req;
             global.app.response = res;
 
-            global.app.setLanguage();
-
             if (req.method.toLowerCase() === 'post') {
 
                 let postBody = '';

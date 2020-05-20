@@ -1,11 +1,13 @@
-module.exports = class SiteController {
-    constructor() {
+const Controller = require('./Controller');
 
+module.exports = class SiteController extends Controller {
+    constructor(name) {
+        super(name)
     }
 
-    index(request, view, params) {
+    index(request, view) {
 
-        view.view('index');
+        view.view('index', {'data': require(`${view.viewsPath}/data.json`)});
 
     }
 };

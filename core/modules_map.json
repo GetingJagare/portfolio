@@ -4,5 +4,6 @@
   "router": "modules/router",
   "templator": "modules/templator",
   "translator": "modules/translator",
-  "server": "modules/server"
+  "server": "modules/server",
+  "seo": "modules/seo"
 }

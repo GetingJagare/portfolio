@@ -1,0 +1,176 @@
+{
+  "projects": [
+    {
+      "title": "online-samsung.ru",
+      "preview": "build/portfolio/online_s_mini.png",
+      "desc_parts": [
+        "<a href=\"https://online-samsung.ru\" target=\"_blank\">Официальный магазин Samsung</a> в России.",
+        "CMS Drupal.",
+        "Подключение сервисов доставки, онлайн-оплаты, создание интерактивной карты точек самовывоза по всей России."
+      ],
+      "images": {
+        "desktop": "build/portfolio/online_s.png"
+      }
+    },
+    {
+      "title": "visamanаger.ru",
+      "preview": "build/portfolio/visa_mini.png",
+      "desc_parts": [
+        "Сайт <a href=\"http://visamanager.ru\" target=\"_blank\">визового менеджера</a>",
+        "CMS Drupal.",
+        "Проектирование, разработка и реализация личного кабинета для заказа виз, загранпаспортов и <br />приглашений для иностранцев."
+      ],
+      "images": {
+        "desktop": "build/portfolio/visa.png"
+      }
+    },
+    {
+      "title": "rustex.ru",
+      "preview": "build/portfolio/web.png",
+      "desc_parts": [
+        "Сайт <a href=\"https://rustex.ru\" target=\"_blank\">веб-студии</a>",
+        "Разработка и реализация (бэкенд и фронтэнд)",
+        "Stack: Sass, JQuery, Bolt CMS. Методология БЭМ"
+      ],
+      "images": {
+        "mobile": "build/portfolio/web_320.png",
+        "tablet": "build/portfolio/web_768.png",
+        "desktop": "build/portfolio/web.png"
+      }
+    },
+    {
+      "title": "wp-interiors.com",
+      "preview": "build/portfolio/wp_inter_mini.png",
+      "desc_parts": [
+        "<a href=\"http://wp-interiors.com\" target=\"_blank\">Сайт компании</a>, занимающейся проектированием интерьеров квартир.",
+        "CMS Wordpress.",
+        "Проектирование, разработка и реализация, верстка фронтэнда в соответствии с требованиями заказчика."
+      ],
+      "images": {
+        "mobile": "build/portfolio/wp_inter_320.png",
+        "tablet": "build/portfolio/wp_inter_768.png",
+        "desktop": "build/portfolio/wp_inter.png"
+      }
+    },
+    {
+      "title": "protres.ru",
+      "preview": "build/portfolio/protres_mini.png",
+      "desc_parts": [
+        "<a href=\"https://protres.ru\" target=\"_blank\">Сайт</a> института белка РАН. CMS Drupal.",
+        "Верстка под все разрешения в соответствии с макетами.",
+        "Front-end stack: Sass, JQuery"
+      ],
+      "images": {
+        "mobile": "build/portfolio/protres_320.png",
+        "tablet": "build/portfolio/protres_768.png",
+        "desktop": "build/portfolio/protres.png"
+      }
+    },
+    {
+      "title": "meinekurse.ru",
+      "preview": "build/portfolio/meinekurse_mini.png",
+      "desc_parts": [
+        "<a href=\"http://meinekurse.ru\" target=\"_blank\">Сайт</a> центра преподавания немецкого языка",
+        "Микс Yiiv1.1 и Yiiv2, Yupe v1.",
+        "Добавление в систему дополнительных модулей, правки фронт-энда (Less + JS)"
+      ],
+      "images": {
+        "mobile": "build/portfolio/meinekurse_320.png",
+        "tablet": "build/portfolio/meinekurse_768.png",
+        "desktop": "build/portfolio/meinekurse.png"
+      }
+    },
+    {
+      "title": "black-freak-society.ru",
+      "preview": "build/portfolio/kloster_2_mini.png",
+      "desc_parts": [
+        "Одностраничный <a href=\"https://black-freak-society.ru\" target=\"_blank\">сайт</a> мастерской.<br/>",
+        "Stack: VueJs, Bootstrap, SASS. Сборка ресурсов - Webpack.",
+        "Дизайн \"из головы\"."
+      ],
+      "images": {
+        "mobile": "build/portfolio/kloster_320_2.png",
+        "tablet": "build/portfolio/kloster_768_2.png",
+        "desktop": "build/portfolio/kloster_2.png"
+      }
+    }
+  ],
+  "skills": [
+    {
+      "slug": "html",
+      "title": "HTML5"
+    },
+    {
+      "slug": "css",
+      "title": "CSS"
+    },
+    {
+      "slug": "bs",
+      "title": "BootStrap"
+    },
+    {
+      "slug": "js",
+      "title": "VanillaJS"
+    },
+    {
+      "slug": "njs",
+      "title": "NodeJS"
+    },
+    {
+      "slug": "vuejs",
+      "title": "VueJS"
+    },
+    {
+      "slug": "sass",
+      "title": "Sass"
+    },
+    {
+      "slug": "webp",
+      "title": "Webpack"
+    },
+    {
+      "slug": "gulp",
+      "title": "Gulp"
+    },
+    {
+      "slug": "git",
+      "title": "Git"
+    },
+    {
+      "slug": "php",
+      "title": "PHP"
+    },
+    {
+      "slug": "mysql",
+      "title": "MySQL"
+    },
+    {
+      "slug": "yii",
+      "title": "Yii"
+    },
+    {
+      "slug": "laravel",
+      "title": "Laravel"
+    },
+    {
+      "slug": "symfony",
+      "title": "Symfony"
+    },
+    {
+      "slug": "wp",
+      "title": "WordPress"
+    },
+    {
+      "slug": "drupal",
+      "title": "Drupal"
+    },
+    {
+      "slug": "apache",
+      "title": "Apache"
+    },
+    {
+      "slug": "nginx",
+      "title": "Nginx"
+    }
+  ]
+}

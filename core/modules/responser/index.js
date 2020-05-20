@@ -18,24 +18,24 @@ module.exports = class Responser {
 
     /**
      * @param template
+     * @param params
      */
-    view(template) {
+    view(template, params) {
 
-        this.end(this.renderTemplate(template));
+        this.end(this.renderTemplate(template, params));
 
     }
 
     /**
      * @param template
+     * @param params
      * @returns {Promise|*}
      */
-    renderTemplate(template) {
+    renderTemplate(template, params) {
 
         template = `${template.replace(/^\/?/, '')}.twig`;
 
-        const renderedTemplate = facades.templator().render(template);
-
-        return renderedTemplate;
+        return facades.templator().render(template, params);
 
     }
 

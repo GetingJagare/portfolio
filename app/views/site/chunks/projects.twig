@@ -1,0 +1,63 @@
+<section class="portfolio section" id="portfolio">
+    <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0 section__title">{{ t('Проекты, в которых я участвовал') }}</h2>
+        <hr class="star-dark mb-5 section__star">
+        <div class="row portfolio__row">
+
+            {% for i, project in projects %}
+
+                <div class="col-md-6 col-lg-4 portfolio__item">
+                    <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-{{ i + 1 }}">
+                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="{{ project.preview }}" alt="">
+                    </a>
+                </div>
+
+                <div class="portfolio-modal mfp-hide project" id="portfolio-modal-{{ i + 1 }}">
+                    <div class="portfolio-modal-dialog bg-white project__modal">
+                        <a class="close-button d-none d-md-block portfolio-modal-dismiss project__close-button" href="#">
+                            <i class="fa fa-3x fa-times project__close-button-icon"></i>
+                        </a>
+                        <div class="container text-center project__container">
+                            <div class="row project__row">
+                                <div class="col-lg-8 mx-auto project__row-block">
+                                    <h2 class="text-secondary text-uppercase mb-0 project__title">{{ t(project.title)|raw }}</h2>
+                                    <hr class="star-dark mb-5 project__star">
+                                    <p class="mb-5 project__description">
+                                        {% for j, part in project.desc_parts %}
+
+                                            {{ t(part)|raw }}
+
+                                            {% if j < project.desc_parts|length - 1 %}<br />{% endif %}
+
+                                        {% endfor %}
+                                    </p>
+                                    <div class="project__images">
+                                        {% for viewport, path in project.images %}
+                                            <div class="project__images-item project__images-item_{{ viewport }}"
+                                                 data-src="{{ path }}"
+                                                 data-classes="img-fluid mb-5  project__screenshot project__screenshot_{{ viewport }}">
+                                                <div class="project__resolution">
+                                                    <i class="fa fa-{{ viewport }}"></i>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                                        <i class="fa fa-close"></i>
+                                        {{ t('Закрыть') }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>

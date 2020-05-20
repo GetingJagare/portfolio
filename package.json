@@ -37,10 +37,10 @@
     "md5-file": "^4.0.0",
     "mime-types": "^2.1.27",
     "nodemon": "^2.0.4",
-    "redis": "^2.8.0",
     "shelljs": "^0.8.4",
     "striptags": "^3.1.1",
-    "twig": "^1.15.1"
+    "twig": "^1.15.1",
+    "redis": "^3.0.2"
   },
   "devDependencies": {
     "bootstrap": "^4.5.0",

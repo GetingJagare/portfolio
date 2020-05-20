@@ -1,0 +1,16 @@
+{% set data = params.seoData %}
+<meta property="twitter:card" content="summary" />
+<meta property="og:type" content="website" />
+{% if data.keywords %}
+    <meta name="keywords" content="{{ t(data.keywords) }}" />
+{% endif %}
+{% if data.description %}
+    <meta name="description" content="{{ t(data.keywords) }}" />
+    <meta property="og:description" content="{{ t(data.description) }}" />
+    <meta property="twitter:description" content="{{ t(data.description) }}" />
+{% endif %}
+{% if data.title %}
+    <meta property="og:title" content="{{ t(data.title) }}" />
+    <meta property="twitter:title" content="{{ t(data.title) }}" />
+    <title>{{ t(data.title) }}</title>
+{% endif %}

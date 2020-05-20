@@ -1,7 +1,11 @@
-module.exports = class {
-    constructor() {}
+const Controller = require('./Controller');
 
-    index(request, view, params) {
+module.exports = class MailController extends Controller {
+    constructor(name) {
+        super(name);
+    }
+
+    index(request, view, facades, params) {
 
         const striptags = require('striptags');
         const shell = require('shelljs');
@@ -10,7 +14,7 @@ module.exports = class {
 
         if (!params['g-recaptcha-response']) {
 
-            view.end(JSON.stringify({result: 0, message: 'Не заполнена капча!'}));
+            view.end(JSON.stringify({result: 0, message: facades.__t('Не заполнена капча!')}));
 
             return;
 

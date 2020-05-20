@@ -17,12 +17,13 @@ module.exports = class Router {
 
     }
 
-    parse () {
+    parse() {
 
         const routePatterns = Object.keys(this.routes);
 
         const request = facades.request();
         const view = facades.view();
+        const app = facades.app();
 
         const requestUrl = url.parse(request.url, true);
 
@@ -45,9 +46,13 @@ module.exports = class Router {
 
                 action = action || 'index';
 
-                const controllerClass = require(`${facades.absPath()}/app/${facades.controllersPath()}/${controller}`);
+                const controllerClass = require(`${app.appPath}/${facades.controllersPath()}/${controller}`);
 
-                const controllerInstance = new controllerClass();
+                const controllerInstance = new controllerClass(controller);
+
+                app.controllerAlias = controllerInstance.getAlias();
+
+                view.viewsPath = `${app.appPath}/${app.config.views_path}/${app.controllerAlias}`;
 
                 if (!controllerInstance[action]) {
 
@@ -68,7 +73,9 @@ module.exports = class Router {
                         break;
                 }
 
-                controllerInstance[action].call(controllerClass, request, view, params);
+                facades.app().setLanguage();
+
+                controllerInstance[action].call(controllerClass, request, view, facades, params);
 
                 return;
 
@@ -89,83 +96,4 @@ module.exports = class Router {
         }
 
     }
-
-    /*parse() {
-        let routes = Object.keys(this.routesArray);
-        let urlChunks = request.url.split('?');
-        let responser = require(`${config.modules_path}/responser`);
-
-        if (routes.indexOf(urlChunks[0]) >= 0) {
-            let controllerData = this.routesArray[urlChunks[0]].split(':');
-
-            if (request.method.toLowerCase() !== controllerData[0]) {
-
-                responser.throwError(405, 'Method not allowed');
-            } else {
-                let fs = require('fs');
-                let controllerParts = controllerData[1].split('@');
-
-                if (!fs.existsSync(`${config.controllers_path}/${controllerParts[0]}`)) {
-                    responser.throwError(500, 'Method not allowed');
-                }
-            }
-        }
-
-        if (req.method === 'POST') {
-            let postBody = '';
-            req.on('data', chunk => {
-                postBody += chunk;
-            });
-            req.on('end', () => {
-                req.post = parse(postBody);
-                router(req, res);
-            });
-        } else {
-            router(req, res);
-        }
-    }*/
-};
-
-/*
-module.exports = (req, res) => {
-    switch (req.url) {
-        case '/':
-            const isProduction = req.headers.host === 'danwanderer.ru';
-            const template = fs.readFileSync(`${ABSPATH}/views/index.twig`, {encoding: 'utf-8'});
-            const translator = require(`${ABSPATH}/translator`);
-
-            const html = twig({
-                data: template,
-                allowInlineIncludes: true
-            }).render({
-                isProduction: isProduction,
-                hostname: req.headers.host.replace(/:\d+$/, ''),
-                absPath: ABSPATH,
-                __t: translator.__t
-            });
-            let maxAge = 30 * 24 * 60 * 60;
-
-            writeResponse(200, {'Content-Type': 'text/html', 'Cache-Control': `private, max-age=${maxAge}, must-revalidate`}, html, res);
-            break;
-        case '/mail':
-            const isAjax = req.headers['x-requested-with'] && req.headers['x-requested-with'] === 'XMLHttpRequest';
-            if (isAjax) {
-
-            }
-            break;
-        default:
-            const url = `${config.absPath}${req.url}`.replace(/\?.*$/, '');
-            if (fs.existsSync(url)) {
-                const fileLoader = require(`${config.absPath}/file-loader`);
-                const data = fileLoader.load(url);
-
-                writeResponse(data.status, data.headers, data.content, res);
-            } else {
-                const template = fs.readFileSync(`${ABSPATH}/views/errors/404.twig`, {encoding: 'utf-8'});
-                const html = twig({data: template}).render({ version: process.version });
-
-                writeResponse(404, {'Content-Type': 'text/html'}, html, res);
-            }
-            break;
-    }
-};*/
+}

@@ -1,0 +1,35 @@
+{% extends '../layout.twig' %}
+
+{% block content %}
+
+    {% include './chunks/projects.twig' with {projects: params.data.projects} %}
+
+    <!-- About Section -->
+    <section class="bg-primary text-white mb-0 section" id="about">
+        <div class="container">
+            <h2 class="text-center text-uppercase text-white section__title">{{ t('Обо мне') }}</h2>
+            <hr class="star-light mb-5 section__star">
+            <div class="row">
+                <div class="col-lg-4 ml-auto">
+                    <p class="lead">
+                        {{ t('Разрабатываю, поддерживаю, сопровождаю сайты на любой CMS или фрэймворке, используя множество современных технологий и инструментов') }}
+                        <br/>
+                        + {{ t('адаптирую под различные устройства (мобильные, планшеты, десктоп)') }}.
+                    </p>
+                </div>
+                <div class="col-lg-4 mr-auto">
+                    <p class="lead">
+                        {{ t('Образование') }}: {{ t('МГУП им. Ивана Фёдорова') }}.<br/><br/>
+                        {{ t('Знание языков') }}: {{ t('английский (средний уровень)') }}, <br/>{{ t('немецкий (базовый уровень)') }}.
+                    </p>
+                </div>
+            </div>
+
+            {% include './chunks/skills.twig' with {skills: params.data.skills} %}
+
+        </div>
+    </section>
+
+    {% include './chunks/contacts.twig' %}
+
+{% endblock %}
