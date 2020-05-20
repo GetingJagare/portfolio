@@ -41,7 +41,7 @@ module.exports = class App {
             cookies = cookieParser.parse(request.headers.cookie);
         }
 
-        if (!request?.headers['accept-language'] && !cookies.lang) {
+        if (!request?.headers['accept-language'] && !cookies?.lang) {
 
             return;
 
