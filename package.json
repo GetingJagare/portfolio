@@ -27,7 +27,10 @@
   },
   "scripts": {
     "test": "mocha ./test/**/*.js",
-    "launch": "nodemon index.js"
+    "launch": "nodemon index.js",
+    "dev": "webpack --mode development",
+    "watch": "webpack --mode development --watch",
+    "prod": "webpack --mode production"
   },
   "dependencies": {
     "accept-language-parser": "^1.5.0",
@@ -43,17 +46,24 @@
     "redis": "^3.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-loader": "^8.1.0",
     "bootstrap": "^4.5.0",
+    "css-loader": "^3.5.3",
+    "file-loader": "^6.0.0",
     "font-awesome": "4.7.0",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-filter": "^6.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-uglify": "^3.0.2",
     "jquery": "3.3.1",
     "jquery.easing": "^1.4.1",
     "magnific-popup": "^1.1.0",
-    "mocha": "^6.2.3"
+    "mini-css-extract-plugin": "^0.9.0",
+    "mocha": "^6.2.3",
+    "node-sass": "^4.14.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "purgecss-webpack-plugin": "^2.2.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.43.0"
   }
 }

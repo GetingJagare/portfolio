@@ -51,15 +51,15 @@ module.exports = class App {
 
         const langParser = require('accept-language-parser');
 
-        const lang = langParser.parse(request.headers['accept-language'])[0]['code'] || (cookies?.lang ? cookies.lang : this.config.sourceLang);
+        const lang =  cookies?.lang ? cookies.lang : langParser.parse(request.headers['accept-language'])[0]['code'];
 
         if (this.config.lang !== lang) {
 
             this.config.lang = this.translator.hasTranslations(lang) && lang !== this.config.sourceLang ? lang : this.config.alternativeLang;
 
-            response.setHeader('Set-Cookie', `lang=${lang}`);
-
         }
+
+        response.setHeader('Set-Cookie', `lang=${lang}`);
 
         this.config.host = request.headers.host;
 

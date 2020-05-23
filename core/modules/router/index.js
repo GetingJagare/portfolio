@@ -91,7 +91,7 @@ module.exports = class Router {
             if (loadedFile) {
                 view.end(loadedFile, headers);
             } else {
-                view.end(`Resource not found by url ${request.path}`, {'Content-Type': 'text/plain'}, 404);
+                view.end(`Resource not found by url ${requestUrl.path}`, {'Content-Type': 'text/plain'}, 404);
             }
         }
 

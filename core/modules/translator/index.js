@@ -7,15 +7,43 @@ const redisClient = redis.createClient();
  * @type {module.Translator}
  */
 module.exports = class Translator {
-    constructor () {}
+    constructor () {
 
-    hasTranslations (lang) {
+        if (!(this.translations = redisClient.get('translations', redis.print))) {
 
-        return fs.existsSync(`${app.appPath}/translations/${lang}`);
+            this.translations = {};
+
+            const app = facades.app();
+            const translationsPath = `${app.appPath}/translations`;
+
+            if (!fs.existsSync(translationsPath)) {
+
+                return;
+
+            }
+
+            fs.readdirSync(translationsPath).forEach((langDir) => {
+
+                this.translations[langDir] = require(`${translationsPath}/${langDir}/index.json`);
+
+            });
+
+            redisClient.set('translations', JSON.stringify(this.translations), redis.print);
+
+        } else {
+
+            this.translations = JSON.parse(this.translations);
+
+        }
 
     }
 
-    //@todo put translations to redis
+    hasTranslations (lang) {
+
+        return !!this.translations[lang];
+
+    }
+
     __t (str) {
 
         const app = facades.app();
@@ -32,9 +60,7 @@ module.exports = class Translator {
 
         }
 
-        const translations = require(`${app.appPath}/translations/${app.config.lang}`);
-
-        return translations[str] || str;
+        return this.translations[app.config.lang][str] || str;
 
     }
 };

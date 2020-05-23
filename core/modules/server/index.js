@@ -20,7 +20,7 @@ module.exports = class Server {
 
                 let postBody = '';
 
-                req.on('data', chunk => { postBody += chunk });
+                req.on('data', (chunk) => { postBody += chunk });
 
                 req.on('end', () => {
                     req.post = parse(postBody);
