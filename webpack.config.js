@@ -1,12 +1,16 @@
+'use strict';
+
 const glob = require('glob-all');
 const path = require('path');
 const miniCssWebpackPlugin = require('mini-css-extract-plugin');
 const uglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const optimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 function cssWhiteList() {
-    return [];
+    return [/mfp/, /fa/, /mb/, /img/, /project__screenshot/, /skills__item/, /fancybox/, /project__images/];
 }
 
 module.exports = {
@@ -63,8 +67,8 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            outputPath: '../img',
-                            emitFile: false
+                            outputPath: './img',
+                            //emitFile: false
                         }
                     }
                 ]
@@ -76,7 +80,7 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            outputPath: '../fonts'
+                            outputPath: './fonts'
                         }
                     }
                 ]
@@ -92,6 +96,12 @@ module.exports = {
             paths: glob.sync(['./app/views/**/*.twig']),
             whitelistPatterns: cssWhiteList(),
         }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        }),
+        new CleanWebpackPlugin()
     ],
     optimization: {
         minimizer: [
