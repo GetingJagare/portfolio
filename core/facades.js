@@ -45,6 +45,8 @@ module.exports = {
      */
     controllersPath: () => global.app.config.controllers_path,
 
-    __t: (str) => global.app.translator.__t(str)
+    __t: (str) => global.app.translator.__t(str),
+
+    hasTranslations: (lang) => global.app.translator.hasTranslations(lang)
 
 };

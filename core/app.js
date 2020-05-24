@@ -53,13 +53,22 @@ module.exports = class App {
 
         const lang =  cookies?.lang ? cookies.lang : langParser.parse(request.headers['accept-language'])[0]['code'];
 
-        if (this.config.lang !== lang) {
+        // if the requested language has translations set it as the app language
+        if (facades.hasTranslations(lang)) {
 
-            this.config.lang = this.translator.hasTranslations(lang) && lang !== this.config.sourceLang ? lang : this.config.alternativeLang;
+            this.config.lang = lang;
+
+        } else {
+
+            // if the requested language is equal to the app source language
+            const isSourceLang = lang === this.config.sourceLang;
+
+            this.config.lang = !isSourceLang && facades.hasTranslations(this.config.alternativeLang) ? this.config.alternativeLang
+                : this.config.sourceLang;
 
         }
 
-        response.setHeader('Set-Cookie', `lang=${lang}`);
+        response.setHeader('Set-Cookie', `lang=${this.config.lang}`);
 
         this.config.host = request.headers.host;
 
