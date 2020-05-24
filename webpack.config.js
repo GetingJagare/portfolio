@@ -10,7 +10,7 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 function cssWhiteList() {
-    return [/mfp/, /fa/, /mb/, /img/, /project__screenshot/, /skills__item/, /fancybox/, /project__images/, /alert/];
+    return [/mfp/, /fa/, /mb/, /img/, /project__screenshot/, /skills__item/, /fancybox/, /project__images/, /alert/, /button/];
 }
 
 module.exports = {
