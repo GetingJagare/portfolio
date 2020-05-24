@@ -30,7 +30,8 @@
     "launch": "nodemon index.js",
     "dev": "webpack --mode development",
     "watch": "webpack --mode development --watch",
-    "prod": "webpack --mode production"
+    "prod": "webpack --mode production",
+    "webp-convert": "node webp-convert.js"
   },
   "dependencies": {
     "accept-language-parser": "^1.5.0",
@@ -67,6 +68,7 @@
     "style-loader": "^1.2.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webp-converter": "^2.2.3"
   }
 }
