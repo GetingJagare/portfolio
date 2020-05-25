@@ -41,7 +41,7 @@ imagePaths.forEach((path) => {
 
         fs.readdirSync(targetPath).forEach((path) => {
 
-            if (fs.lstatSync(`${targetPath}/${path}`).isFile()) {
+            if (fs.lstatSync(`${targetPath}/${path}`).isFile() && !/\.webp$/.test(path)) {
                 convert(`${targetPath}/${path}`);
             }
 
