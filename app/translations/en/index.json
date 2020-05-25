@@ -50,5 +50,7 @@
   "Stack: VueJs, Bootstrap, SASS. Сборка ресурсов - Webpack.": "Stack: VueJs, Bootstrap, SASS. Assets' compiling - Webpack.",
   "Дизайн \"из головы\".": "Design is \"out of my mind\".",
   "Портфолио веб-разработчика, программист, фрилансер москва, веб-программист PHP JS NodeJS Laravel Symfony Yii, ты ж программист, г. Москва": "Web-developer's portfolio, freelancer Moscow, web-developer PHP JS NodeJS Laravel Symfony Yii, Moscow",
-  "Разрабатываю (поддерживаю, сопровождаю) сайты на Wordpress, Drupal, Laravel, Symfony, Yii, возможно также написание backend'а на NodeJS (Express)": "I develop, support and maintain sites and web-applications: Wordpress, Drupal, Laravel, Symfony, Yii, also possibly backend using NodeJS (Express)"
+  "Разрабатываю (поддерживаю, сопровождаю) сайты на Wordpress, Drupal, Laravel, Symfony, Yii, возможно также написание backend'а на NodeJS (Express)": "I develop, support and maintain sites and web-applications: Wordpress, Drupal, Laravel, Symfony, Yii, also possibly backend using NodeJS (Express)",
+  "Мое резюме": "CV",
+  "ссылка": "download link"
 }
