@@ -23,5 +23,14 @@
                 </li>
             </ul>
         </div>
+        <div class="lang-switcher">
+            {% for key, l in {'ru': 'ru', 'en': 'us'} %}
+                {% if lang != key %}
+                    <div class="lang-switcher__item">
+                        <a href="#" data-lang="{{ key }}" class="flag-icon flag-icon-{{ l }} lang-switcher__link" title="{{ key|capitalize }}"></a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </nav>

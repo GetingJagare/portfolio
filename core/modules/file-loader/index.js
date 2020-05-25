@@ -28,7 +28,7 @@ module.exports = class FileLoader {
 
         let headers = {'Content-Type': mime.lookup(filePath)};
 
-        if (/\.(js|css|woff\d*|ttf|eot|jpe?g|gif|svg|png|ico|webp)$/.test(filePath)) {
+        /*if (/\.(js|css|woff\d*|ttf|eot|jpe?g|gif|svg|png|ico|webp)$/.test(filePath)) {
             let currentDate = new Date();
             const currentTime = currentDate.getTime();
             const expireTime = 30 * 24 * 60 * 60;
@@ -42,7 +42,7 @@ module.exports = class FileLoader {
 
             const fileHash = md5File.sync(filePath);
             headers['ETag'] = etag(fileHash);
-        }
+        }*/
 
         return {headers: headers, loadedFile: loadedFile};
 

@@ -10,5 +10,6 @@ $(function () {
 
    require('./scripts/contact_me');
    require('./scripts/freelancer');
+   require('./scripts/lang-switcher');
 
 });

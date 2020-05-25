@@ -1,30 +1,13 @@
 {
   "title": "Freelancer",
-  "name": "freelancer-portfolio",
-  "version": "4.0.1",
-  "description": "A freelancer portfolio HTML theme for Bootstrap.",
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "",
   "keywords": [
-    "css",
-    "sass",
-    "html",
-    "responsive",
-    "theme",
-    "template"
+    "freelancer",
+    "web-developer"
   ],
-  "homepage": "https://startbootstrap.com/template-overviews/freelancer",
-  "bugs": {
-    "url": "https://github.com/BlackrockDigital/startbootstrap-freelancer/issues",
-    "email": "feedback@startbootstrap.com"
-  },
   "license": "MIT",
-  "author": "Start Bootstrap",
-  "contributors": [
-    "David Miller (http://davidmiller.io/)"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BlackrockDigital/startbootstrap-freelancer.git"
-  },
   "scripts": {
     "test": "mocha ./test/**/*.js",
     "launch": "nodemon index.js",
@@ -54,6 +37,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",
+    "flag-icon-css": "^3.4.6",
     "font-awesome": "4.7.0",
     "glob-all": "^3.2.1",
     "jquery": "3.3.1",
@@ -67,8 +51,8 @@
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
+    "webp-converter": "^2.2.3",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webp-converter": "^2.2.3"
+    "webpack-cli": "^3.3.11"
   }
 }
