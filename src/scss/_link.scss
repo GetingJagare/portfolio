@@ -1,13 +1,10 @@
 .link {
 
-  &:link, &:active, &:visited, &:active {
+  &, &:link, &:active, &:visited, &:active, &:hover {
 
+    color: $white;
     text-decoration: none;
 
-  }
-
-  &, &:hover {
-    color: $white;
   }
 
   position: relative;
