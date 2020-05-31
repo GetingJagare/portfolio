@@ -25,7 +25,7 @@ const convert = (path) => {
 
 };
 
-const imagePaths = ['/src/img/main.jpg', '/src/img/portfolio', '/src/img/icons'];
+const imagePaths = ['/src/img/main.png', '/src/img/portfolio', '/src/img/icons'];
 
 imagePaths.forEach((path) => {
 
