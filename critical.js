@@ -8,21 +8,24 @@ critical.generate({
     // Your base directory
     base: __dirname + '/dist',
 
-    inline: true,
-
     // HTML source file
-    src: '/../src/critical/critical.html',
+    src: '/../critical.html',
 
     // Your CSS Files (optional)
-    css: ['main.css'],
+    css: [__dirname + '/dist/main.css'],
 
     target: {
-        css: 'critical.css',
-        html: 'index-critical.html',
+        css: __dirname + '/dist/critical.css',
         uncritical: 'uncritical.css'
     },
 
     minify: true,
 }, (err, res) => {
+    if (err) {
+        console.error(err);
+
+        return;
+    }
+
     console.log(res);
 });
