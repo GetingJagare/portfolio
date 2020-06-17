@@ -4,7 +4,7 @@
       "title": "online-samsung.ru",
       "preview": "src/img/portfolio/online_s_mini.webp",
       "desc_parts": [
-        "<a href=\"https://online-samsung.ru\" target=\"_blank\">Официальный магазин Samsung</a> в России.",
+        "Официальный магазин Samsung в России.",
         "CMS Drupal.",
         "Подключение сервисов доставки, онлайн-оплаты, создание интерактивной карты точек самовывоза по всей России."
       ],
@@ -16,7 +16,7 @@
       "title": "visamanаger.ru",
       "preview": "src/img/portfolio/visa_mini.webp",
       "desc_parts": [
-        "Сайт <a href=\"http://visamanager.ru\" target=\"_blank\">визового менеджера</a>",
+        "Сайт визового менеджера",
         "CMS Drupal.",
         "Проектирование, разработка и реализация личного кабинета для заказа виз, загранпаспортов и <br />приглашений для иностранцев."
       ],
@@ -28,7 +28,7 @@
       "title": "rustex.ru",
       "preview": "src/img/portfolio/web.webp",
       "desc_parts": [
-        "Сайт <a href=\"https://rustex.ru\" target=\"_blank\">веб-студии</a>",
+        "Сайт веб-студии",
         "Разработка и реализация (бэкенд и фронтэнд)",
         "Stack: Sass, JQuery, Bolt CMS. Методология БЭМ"
       ],
@@ -42,7 +42,7 @@
       "title": "wp-interiors.com",
       "preview": "src/img/portfolio/wp_inter_mini.webp",
       "desc_parts": [
-        "<a href=\"http://wp-interiors.com\" target=\"_blank\">Сайт компании</a>, занимающейся проектированием интерьеров квартир.",
+        "Сайт компании, занимающейся проектированием интерьеров квартир.",
         "CMS Wordpress.",
         "Проектирование, разработка и реализация, верстка фронтэнда в соответствии с требованиями заказчика."
       ],
@@ -56,7 +56,7 @@
       "title": "protres.ru",
       "preview": "src/img/portfolio/protres_mini.webp",
       "desc_parts": [
-        "<a href=\"https://protres.ru\" target=\"_blank\">Сайт</a> института белка РАН. CMS Drupal.",
+        "Сайт института белка РАН. CMS Drupal.",
         "Верстка под все разрешения в соответствии с макетами.",
         "Front-end stack: Sass, JQuery"
       ],
@@ -67,24 +67,10 @@
       }
     },
     {
-      "title": "meinekurse.ru",
-      "preview": "src/img/portfolio/meinekurse_mini.webp",
-      "desc_parts": [
-        "<a href=\"http://meinekurse.ru\" target=\"_blank\">Сайт</a> центра преподавания немецкого языка",
-        "Микс Yiiv1.1 и Yiiv2, Yupe v1.",
-        "Добавление в систему дополнительных модулей, правки фронт-энда (Less + JS)"
-      ],
-      "images": {
-        "mobile": "src/img/portfolio/meinekurse_320.webp",
-        "tablet": "src/img/portfolio/meinekurse_768.webp",
-        "desktop": "src/img/portfolio/meinekurse.webp"
-      }
-    },
-    {
       "title": "black-freak-society.ru",
       "preview": "src/img/portfolio/kloster_2_mini.webp",
       "desc_parts": [
-        "Одностраничный <a href=\"https://black-freak-society.ru\" target=\"_blank\">сайт</a> мастерской.<br/>",
+        "Одностраничный сайт мастерской.<br/>",
         "Stack: VueJs, Bootstrap, SASS. Сборка ресурсов - Webpack.",
         "Дизайн \"из головы\"."
       ],
@@ -92,6 +78,19 @@
         "mobile": "src/img/portfolio/kloster_320_2.webp",
         "tablet": "src/img/portfolio/kloster_768_2.webp",
         "desktop": "src/img/portfolio/kloster_2.webp"
+      }
+    },
+    {
+      "title": "sim-store.ru",
+      "preview": "src/img/portfolio/simstore_mini.webp",
+      "desc_parts": [
+        "Доработка и разработка нового функционала",
+        "Stack: Laravel5, VueJS, Sass"
+      ],
+      "images": {
+        "mobile": "src/img/portfolio/simstore_320.webp",
+        "tablet": "src/img/portfolio/simstore_768.webp",
+        "desktop": "src/img/portfolio/simstore.webp"
       }
     }
   ],
