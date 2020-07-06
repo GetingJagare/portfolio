@@ -92,6 +92,19 @@
         "tablet": "src/img/portfolio/simstore_768.webp",
         "desktop": "src/img/portfolio/simstore.webp"
       }
+    },
+    {
+      "title": "grinteq.com",
+      "preview": "src/img/portfolio/grinteq_mini.webp",
+      "desc_parts": [
+        "Digital-студия <a href=\"https://grinteq.com\" target=\"_blank\">grinteq.com</a>",
+        "Stack: jQuery/Vanilla, Sass, MODX"
+      ],
+      "images": {
+        "mobile": "src/img/portfolio/grinteq_320.webp",
+        "tablet": "src/img/portfolio/grinteq_768.webp",
+        "desktop": "src/img/portfolio/grinteq.webp"
+      }
     }
   ],
   "skills": [
