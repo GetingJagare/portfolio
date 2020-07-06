@@ -1,0 +1,42 @@
+{
+  "projects": [
+    {
+      "title": "online-samsung.ru",
+      "preview": "src/img/portfolio/online_s_mini.webp",
+      "desc_parts": [
+        "Официальный магазин Samsung в России.",
+        "CMS Drupal.",
+        "Подключение сервисов доставки, онлайн-оплаты, создание интерактивной карты точек самовывоза по всей России."
+      ],
+      "images": {
+        "desktop": "src/img/portfolio/online_s.webp"
+      }
+    },
+    {
+      "title": "visamanаger.ru",
+      "preview": "src/img/portfolio/visa_mini.webp",
+      "desc_parts": [
+        "Сайт визового менеджера",
+        "CMS Drupal.",
+        "Проектирование, разработка и реализация личного кабинета для заказа виз, загранпаспортов и <br />приглашений для иностранцев."
+      ],
+      "images": {
+        "desktop": "src/img/portfolio/visa.webp"
+      }
+    },
+    {
+      "title": "protres.ru",
+      "preview": "src/img/portfolio/protres_mini.webp",
+      "desc_parts": [
+        "Сайт института белка РАН. CMS Drupal.",
+        "Верстка под все разрешения в соответствии с макетами.",
+        "Front-end stack: Sass, JQuery"
+      ],
+      "images": {
+        "mobile": "src/img/portfolio/protres_320.webp",
+        "tablet": "src/img/portfolio/protres_768.webp",
+        "desktop": "src/img/portfolio/protres.webp"
+      }
+    }
+  ]
+}
