@@ -54,5 +54,7 @@
   "Мое резюме": "CV",
   "ссылка": "download link",
   "Доработка и разработка нового функционала": "Reworking and developing new functionality",
-  "Digital-студия <a href=\"https://grinteq.com\" target=\"_blank\">grinteq.com</a>": "Digital-studio <a href=\"https://grinteq.com\" target=\"_blank\">grinteq.com</a>"
+  "Digital-студия <a href=\"https://grinteq.com\" target=\"_blank\">grinteq.com</a>": "Digital-studio <a href=\"https://grinteq.com\" target=\"_blank\">grinteq.com</a>",
+  "Сервис для оценки докладов": "This service for reports' voting",
+  "<a href=\"https://github.com/GetingJagare/quiz\" target=\"_blank\">Исходный код</a>": "<a href=\"https://github.com/GetingJagare/quiz\" target=\"_blank\">Source code</a>"
 }

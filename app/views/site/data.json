@@ -67,6 +67,17 @@
         "tablet": "src/img/portfolio/grinteq_768.webp",
         "desktop": "src/img/portfolio/grinteq.webp"
       }
+    },
+    {
+      "title": "Сервис для оценки докладов",
+      "preview": "src/img/portfolio/golos_mog_mini.webp",
+      "desc_parts": [
+        "Stack: Laravel, VueJS",
+        "<a href=\"https://github.com/GetingJagare/quiz\" target=\"_blank\">Исходный код</a>"
+      ],
+      "images": {
+        "desktop": "src/img/portfolio/golos_mog.webp"
+      }
     }
   ],
   "skills": [
